@@ -1,13 +1,8 @@
 import type { ContactPayload, ContactResponse, SiteContent } from "./types";
+import siteContent from "../data/site-content.json";
 
 export async function fetchContent(): Promise<SiteContent> {
-  const response = await fetch("/api/content");
-
-  if (!response.ok) {
-    throw new Error("Unable to load site content.");
-  }
-
-  return (await response.json()) as SiteContent;
+  return siteContent as SiteContent;
 }
 
 export async function submitContact(payload: ContactPayload): Promise<ContactResponse> {
