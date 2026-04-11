@@ -7,6 +7,7 @@
     "dev": "concurrently \"npm:dev:server\" \"npm:dev:client\"",
     "dev:server": "tsx watch server/index.ts",
     "dev:client": "vite",
+    "prebuild": "node -e \"const fs=require('fs'); try { fs.chmodSync('node_modules/.bin/vue-tsc', 0o755); } catch (e) {}\"",
     "build": "vue-tsc --noEmit && vite build && tsc -p tsconfig.server.json",
     "start": "node dist-server/index.js"
   },
