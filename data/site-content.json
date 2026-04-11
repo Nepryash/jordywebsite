@@ -1,0 +1,117 @@
+{
+  "brand": {
+    "name": "Strumpen",
+    "tagline": "Safe and secure electrical services you can trust.",
+    "phone": "+2348100112233",
+    "email": "service@strumpfenelectro.nl",
+    "address": "0012 Something Street, Venlo, Netherlands"
+  },
+  "navigation": [
+    { "label": "Home", "href": "/" },
+    { "label": "About", "href": "/about" },
+    { "label": "Services", "href": "/services" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "hero": {
+    "eyebrow": "Trusted Electrical Contractors",
+    "title": "SAFE AND SECURE",
+    "description": "We are a Service You Can Trust",
+    "primaryCta": { "label": "Contact Us Now", "href": "/contact" },
+    "secondaryCta": { "label": "Request A Service", "href": "/contact" },
+    "stats": [
+      { "value": "1,200+", "label": "Projects completed" },
+      { "value": "24/7", "label": "Emergency coverage" },
+      { "value": "15 yrs", "label": "Field experience" }
+    ]
+  },
+  "about": {
+    "title": "WE ARE STRUMPEN",
+    "description": "With over 8 years experience in the industry, adipiscing elit. Tortor vel posuere vitae enim, molestie. Diam consequat ac velit ac, morbi erat. Sed ipsum lorem feugiat iaculis sollicitudin molt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor vel posuere.",
+    "highlights": [
+      "Free consultation before large-scope work",
+      "Clear documentation for every installation",
+      "Licensed experts for residential and industrial sites"
+    ]
+  },
+  "services": [
+    {
+      "title": "Residential Wiring",
+      "description": "Full rewires, panel upgrades, outlets, lighting, and fault resolution for homes and apartment buildings."
+    },
+    {
+      "title": "Commercial Fit-Outs",
+      "description": "Electrical planning and delivery for offices, retail units, hospitality spaces, and mixed-use properties."
+    },
+    {
+      "title": "Breakdown Response",
+      "description": "Rapid diagnostics and emergency repair services to restore power safely and reduce downtime."
+    },
+    {
+      "title": "Security Systems",
+      "description": "CCTV, access control, alarms, and integrated low-voltage systems for safer operations."
+    },
+    {
+      "title": "Maintenance",
+      "description": "Preventive inspections, scheduled servicing, and energy-efficiency improvements for ongoing reliability."
+    },
+    {
+      "title": "Installations",
+      "description": "Switchboards, lighting plans, EV chargers, backup power, and custom electrical infrastructure."
+    }
+  ],
+  "offers": [
+    {
+      "title": "Safety Maintenance",
+      "description": "Routine inspections and corrective maintenance to reduce risk before faults turn into outages."
+    },
+    {
+      "title": "Electrical Installation",
+      "description": "New power and lighting systems designed around your layout, budget, and future growth."
+    },
+    {
+      "title": "Service Maintenance",
+      "description": "Fast-response support packages with clear SLAs for business continuity and peace of mind."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Industrial Retrofit",
+      "description": "Control panel modernization for a logistics facility with zero unplanned downtime."
+    },
+    {
+      "title": "Office Expansion",
+      "description": "Structured cabling, lighting, and access control for a growing Amsterdam headquarters."
+    },
+    {
+      "title": "Apartment Upgrade",
+      "description": "Panel replacement and energy-efficient lighting rollout across a residential block."
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Mina Verhoeven",
+      "role": "Facilities Manager",
+      "quote": "The team coordinated around our operating hours and delivered a clean, well-documented install."
+    },
+    {
+      "name": "Ruben de Wit",
+      "role": "Property Developer",
+      "quote": "Communication stayed clear from quote to handover, and the emergency support is excellent."
+    },
+    {
+      "name": "Sophie Kramer",
+      "role": "Homeowner",
+      "quote": "They solved a persistent wiring issue that two previous contractors missed. Professional and reassuring."
+    }
+  ],
+  "team": [
+    { "name": "John Wilson", "role": "Lead Electrical Engineer" },
+    { "name": "Anika Vos", "role": "Project Coordinator" },
+    { "name": "Daan Smit", "role": "Maintenance Specialist" }
+  ],
+  "contact": {
+    "intro": "Tell us what you need help with and we will respond with next steps, availability, and an estimated timeline.",
+    "officeHours": "Mon - Sat: 08:00 - 18:00",
+    "responseTime": "Typical reply within 1 business day"
+  }
+}

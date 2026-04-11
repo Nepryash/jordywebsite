@@ -1,0 +1,18 @@
+[
+  {
+    "id": "927d61de-a6d2-481c-bb90-1b6d8ea8788d",
+    "receivedAt": "2026-04-05T15:11:21.268Z",
+    "name": "Jamie Atlas",
+    "email": "jamie@example.com",
+    "subject": "Commercial fit-out",
+    "message": "We need a quote for office lighting and data runs this month."
+  },
+  {
+    "id": "546e1c92-3028-4f37-8763-8755bfd303e4",
+    "name": "Alex Builder",
+    "email": "alex@example.com",
+    "subject": "Switchboard quote",
+    "message": "Need a quote for a panel upgrade next week.",
+    "receivedAt": "2026-04-05T14:53:31.987Z"
+  }
+]
