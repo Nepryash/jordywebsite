@@ -62,7 +62,7 @@ const ui = computed(() => getUiCopy(locale.value));
           <div class="footer-newsletter">
             <strong class="footer-heading">{{ ui.footer.newsletter }}</strong>
             <form class="footer-subscribe" @submit.prevent>
-              <input type="email" aria-label="Email address" />
+              <input type="email" :aria-label="ui.common.emailAddress" />
               <button type="submit">{{ ui.footer.subscribe }}</button>
             </form>
 

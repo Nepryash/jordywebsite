@@ -60,7 +60,7 @@ const aboutParagraphs = computed(() => {
 
     <section class="about-figma-intro">
       <div class="site-frame">
-        <div class="breadcrumbs about-figma-breadcrumbs" data-node-id="8:554">Home &gt; <span data-node-id="8:555">{{ ui.about.breadcrumb }}</span></div>
+        <div class="breadcrumbs about-figma-breadcrumbs" data-node-id="8:554">{{ ui.common.home }} &gt; <span data-node-id="8:555">{{ ui.about.breadcrumb }}</span></div>
         <div class="about-figma-layout">
           <div class="about-figma-photo">
             <img :src="aboutPhoto" alt="Electro team at work" data-node-id="8:558" />

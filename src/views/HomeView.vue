@@ -76,6 +76,7 @@ const ui = computed(() => getUiCopy(locale.value));
 const localizedServices = computed(() =>
   serviceCards.map((card, index) => ({
     ...card,
+    title: ui.value.home.serviceTitles[index],
     description: ui.value.home.serviceDescriptions[index]
   }))
 );

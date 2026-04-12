@@ -5,6 +5,12 @@ export type Locale = "en" | "nl";
 
 type UiCopy = {
   loading: string;
+  common: {
+    home: string;
+    emailAddress: string;
+    dutch: string;
+    english: string;
+  };
   header: {
     city: string;
     callUs: string;
@@ -18,6 +24,7 @@ type UiCopy = {
     weOfferIntro: string;
     recentProjects: string;
     customersSay: string;
+    serviceTitles: string[];
     serviceDescriptions: string[];
     offerTitles: string[];
     offerDescriptions: string[];
@@ -79,6 +86,12 @@ type UiCopy = {
 const uiCopy: Record<Locale, UiCopy> = {
   en: {
     loading: "Loading website content...",
+    common: {
+      home: "Home",
+      emailAddress: "Email Address",
+      dutch: "Dutch",
+      english: "English"
+    },
     header: {
       city: "Venlo, Netherlands",
       callUs: "Call Us Anytime",
@@ -93,6 +106,14 @@ const uiCopy: Record<Locale, UiCopy> = {
         "We offer a comprehensive range of cost effective services for residential and commercial properties.",
       recentProjects: "RECENT PROJECTS",
       customersSay: "OUR CUSTOMERS SAY",
+      serviceTitles: [
+        "RESIDENTIAL",
+        "COMMERCIAL",
+        "BREAKDOWN SERVICE",
+        "SECURITY SYSTEMS",
+        "MAINTENANCE",
+        "INSTALLATIONS"
+      ],
       serviceDescriptions: Array(6).fill(
         "With over 8 years experience in the industry, adipiscing elit. Tortor vel posuere"
       ),
@@ -185,6 +206,12 @@ const uiCopy: Record<Locale, UiCopy> = {
   },
   nl: {
     loading: "Website-inhoud laden...",
+    common: {
+      home: "Home",
+      emailAddress: "E-mailadres",
+      dutch: "Nederlands",
+      english: "Engels"
+    },
     header: {
       city: "Venlo, Nederland",
       callUs: "Bel ons altijd",
@@ -199,18 +226,30 @@ const uiCopy: Record<Locale, UiCopy> = {
         "Wij bieden een uitgebreid pakket aan kosteneffectieve diensten voor woningen en bedrijfsruimtes.",
       recentProjects: "RECENTE PROJECTEN",
       customersSay: "WAT KLANTEN ZEGGEN",
+      serviceTitles: [
+        "WONINGBOUW",
+        "UTILITEITSBOUW",
+        "STORINGSSERVICE",
+        "BEVEILIGINGSSYSTEMEN",
+        "ONDERHOUD",
+        "INSTALLATIES"
+      ],
       serviceDescriptions: Array(6).fill(
         "Met meer dan 8 jaar ervaring in de sector leveren wij betrouwbare service en een zorgvuldige afwerking."
       ),
       offerTitles: ["Veilig onderhoud", "Elektrische installatie", "Service & onderhoud"],
-      offerDescriptions: Array(3).fill(
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor vel posuere"
-      ),
+      offerDescriptions: [
+        "Preventief onderhoud en inspecties om risico's vroeg te signaleren en uitval te beperken.",
+        "Nieuwe installaties en uitbreidingen die veilig, schaalbaar en netjes afgewerkt worden opgeleverd.",
+        "Snelle service en duidelijke opvolging voor storingen, periodieke controles en renovaties."
+      ],
       customerNames: ["Merry Jean", "Omari Zayn", "David Mark"],
       customerLocations: ["Northampton, VK.", "Leeds, VK.", "Glasgow, VK."],
-      customerQuotes: Array(3).fill(
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor vel posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor vel posuere"
-      )
+      customerQuotes: [
+        "Strakke planning, nette afwerking en een team dat duidelijk communiceert vanaf de eerste opname tot de oplevering.",
+        "De storing was snel verholpen en we kregen direct praktisch advies om toekomstige uitval te voorkomen.",
+        "Professionele monteurs die afspraken nakomen en ook op locatie meedenken over veilige oplossingen."
+      ]
     },
     about: {
       title: "OVER ONS",

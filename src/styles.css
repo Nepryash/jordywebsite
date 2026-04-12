@@ -3,6 +3,8 @@
 :root {
   --page-width: 1512px;
   --container: 1060px;
+  --gutter: clamp(1rem, 2vw, 1.5rem);
+  --section-space: clamp(3rem, 6vw, 5.75rem);
   --blue: #002992;
   --blue-dark: #001447;
   --yellow: #ffe248;
@@ -24,6 +26,7 @@ body {
   font-family: "Roboto", sans-serif;
   color: var(--text);
   background: var(--surface);
+  overflow-x: clip;
 }
 
 a {
@@ -56,7 +59,7 @@ img {
 }
 
 .site-frame {
-  width: min(calc(100% - 2rem), var(--container));
+  width: min(calc(100% - (var(--gutter) * 2)), var(--container));
   margin: 0 auto;
 }
 
@@ -67,9 +70,9 @@ img {
 .header-main {
   min-height: 88px;
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) auto auto auto;
+  grid-template-columns: minmax(220px, 1.2fr) auto auto auto;
   align-items: center;
-  gap: 2.2rem;
+  gap: clamp(1rem, 2vw, 2.2rem);
 }
 
 .header-brand {
@@ -235,7 +238,55 @@ img {
   display: inline-flex;
   align-items: center;
   justify-self: end;
-  gap: 0;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.header-locale {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.header-locale-label {
+  color: #5d678a;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.locale-switch {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem;
+  border: 1px solid rgba(0, 41, 146, 0.14);
+  border-radius: 999px;
+  background: #f4f7ff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.locale-option {
+  min-width: 3rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--blue);
+  padding: 0.48rem 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.locale-option.active {
+  background: var(--blue);
+  color: white;
+  box-shadow: 0 10px 20px rgba(0, 20, 71, 0.18);
+}
+
+.locale-option:not(.active):hover {
+  transform: translateY(-1px);
 }
 
 .button {
@@ -245,20 +296,21 @@ img {
 }
 
 .figma-hero {
-  min-height: 694px;
+  min-height: min(694px, 88vh);
   background-position: center;
   background-size: cover;
   color: white;
 }
 
 .figma-hero-inner {
-  min-height: 694px;
+  min-height: min(694px, 88vh);
   display: flex;
   align-items: center;
 }
 
 .figma-hero-copy {
-  padding-top: 7rem;
+  max-width: 34rem;
+  padding: clamp(4rem, 12vw, 7rem) 0;
 }
 
 .figma-hero-copy h1 {
@@ -276,23 +328,34 @@ img {
 
 .hero-contact-link {
   display: inline-block;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   border: 1.5px solid var(--yellow);
   color: var(--yellow);
   padding: 0.8rem 1.1rem;
   font-size: 1.05rem;
   font-weight: 700;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    color 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+  animation: cta-button-enter 650ms ease-out both;
 }
 
 .home-about {
   background: #ececec;
-  padding: 5.8rem 0 4.4rem;
+  padding: var(--section-space) 0 clamp(3rem, 5vw, 4.4rem);
 }
 
 .home-about-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 403px;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 403px);
   align-items: start;
-  gap: 4.5rem;
+  gap: clamp(1.8rem, 4vw, 4.5rem);
 }
 
 .home-about-copy {
@@ -320,12 +383,68 @@ img {
 
 .about-button {
   display: inline-block;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   margin-top: 0.5rem;
   background: var(--blue);
   color: #f5f5f5;
   padding: 0.8rem 1.65rem;
   font-size: 1.05rem;
   font-weight: 700;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    color 220ms ease,
+    background-color 220ms ease;
+  box-shadow: 0 12px 24px rgba(0, 20, 71, 0.18);
+  animation: cta-button-enter 650ms ease-out 80ms both;
+}
+
+.hero-contact-link::before,
+.about-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, 0.28) 50%, transparent 80%);
+  transform: translateX(-140%);
+  transition: transform 420ms ease;
+  pointer-events: none;
+}
+
+.hero-contact-link:hover,
+.hero-contact-link:focus-visible,
+.about-button:hover,
+.about-button:focus-visible {
+  transform: translateY(-3px);
+}
+
+.hero-contact-link:hover::before,
+.hero-contact-link:focus-visible::before,
+.about-button:hover::before,
+.about-button:focus-visible::before {
+  transform: translateX(140%);
+}
+
+.hero-contact-link:hover,
+.hero-contact-link:focus-visible {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--blue);
+  box-shadow: 0 16px 30px rgba(255, 210, 0, 0.26);
+}
+
+.about-button:hover,
+.about-button:focus-visible {
+  background: #0d3fc9;
+  color: white;
+  box-shadow: 0 18px 34px rgba(0, 20, 71, 0.24);
+}
+
+.hero-contact-link:focus-visible,
+.about-button:focus-visible {
+  outline: 3px solid rgba(255, 210, 0, 0.32);
+  outline-offset: 3px;
 }
 
 .home-about-visual img {
@@ -336,7 +455,7 @@ img {
 
 .home-services {
   background: #fff;
-  padding: 3.5rem 0 5rem;
+  padding: clamp(2.75rem, 5vw, 3.5rem) 0 clamp(3rem, 6vw, 5rem);
 }
 
 .section-heading {
@@ -352,7 +471,7 @@ img {
 
 .figma-services-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 1.45rem 1.8rem;
 }
 
@@ -419,16 +538,23 @@ img {
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 1.1rem;
   background: rgba(0, 41, 146, 0.8);
 }
 
 .figma-service-bar-front h3 {
   margin: 0;
+  flex: 0 1 16ch;
+  min-width: 0;
   color: white;
-  font-size: 1.625rem;
+  font-size: clamp(1.2rem, 1rem + 0.9vw, 1.625rem);
   font-weight: 600;
-  line-height: normal;
+  line-height: 1.05;
+  text-align: center;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+  text-wrap: balance;
 }
 
 .figma-service-icon-front {
@@ -465,10 +591,15 @@ img {
 
 .figma-service-content h3 {
   margin: 1.1rem 0 0.55rem;
+  max-width: 100%;
   color: white;
-  font-size: 1.625rem;
+  font-size: clamp(1.2rem, 1rem + 0.9vw, 1.625rem);
   font-weight: 600;
-  line-height: normal;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+  text-wrap: balance;
 }
 
 .figma-service-content p {
@@ -528,14 +659,14 @@ img {
 }
 
 .home-offers {
-  padding: 1.5rem 0 5.25rem;
+  padding: 1.5rem 0 clamp(3rem, 6vw, 5.25rem);
 }
 
 .offer-card-grid,
 .recent-project-grid,
 .testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
   gap: 2.25rem;
 }
 
@@ -576,7 +707,7 @@ img {
 }
 
 .home-projects {
-  padding: 2.15rem 0 4.2rem;
+  padding: 2.15rem 0 clamp(3rem, 6vw, 4.2rem);
 }
 
 .recent-project-card img {
@@ -586,7 +717,7 @@ img {
 }
 
 .home-testimonials {
-  padding: 1rem 0 6rem;
+  padding: 1rem 0 clamp(3rem, 7vw, 6rem);
 }
 
 .figma-testimonial-card {
@@ -625,7 +756,7 @@ img {
 }
 
 .page-hero {
-  padding: 3rem 0 1rem;
+  padding: clamp(1.5rem, 4vw, 3rem) 0 1rem;
 }
 
 .page-hero-box {
@@ -701,7 +832,7 @@ img {
 
 .about-figma-intro {
   background: #ededed;
-  padding: 1.7rem 0 3.5rem;
+  padding: 1.7rem 0 clamp(2.5rem, 5vw, 3.5rem);
 }
 
 .about-figma-breadcrumbs {
@@ -712,15 +843,17 @@ img {
 
 .about-figma-layout {
   display: grid;
-  grid-template-columns: 491px minmax(0, 638px);
+  grid-template-columns: minmax(280px, 491px) minmax(0, 638px);
   align-items: start;
   justify-content: space-between;
-  gap: 3rem;
+  gap: clamp(1.8rem, 4vw, 3rem);
 }
 
 .about-figma-photo img {
-  width: 491px;
-  height: 568px;
+  width: 100%;
+  max-width: 491px;
+  aspect-ratio: 491 / 568;
+  height: auto;
   object-fit: cover;
 }
 
@@ -749,12 +882,12 @@ img {
 
 .about-figma-offers {
   background: #ededed;
-  padding: 7.2rem 0 2.6rem;
+  padding: clamp(4rem, 8vw, 7.2rem) 0 2.6rem;
 }
 
 .about-figma-offer-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
   gap: 2rem;
 }
 
@@ -790,7 +923,7 @@ img {
 
 .about-figma-team {
   background: white;
-  padding: 2.15rem 0 3.4rem;
+  padding: 2.15rem 0 clamp(2.8rem, 6vw, 3.4rem);
 }
 
 .about-figma-team-head {
@@ -1008,12 +1141,12 @@ img {
 
 .brochure-band {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 1rem;
   background: #f0f4fb;
   border-top: 1px solid #d6deef;
   border-bottom: 1px solid #d6deef;
-  padding: 2rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
 }
 
 .download-block {
@@ -1069,7 +1202,7 @@ img {
   z-index: 1;
   color: white;
   background: transparent;
-  padding: 2.2rem 2rem 2.8rem;
+  padding: clamp(1.5rem, 4vw, 2.2rem) clamp(1rem, 3vw, 2rem) clamp(2rem, 5vw, 2.8rem);
 }
 
 .all-services-header {
@@ -1089,7 +1222,7 @@ img {
 
 .all-services-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   align-items: start;
   justify-items: stretch;
   gap: 2rem 4rem;
@@ -1169,7 +1302,7 @@ img {
 
 .contact-map-shell {
   width: min(1512px, 100vw);
-  height: 623px;
+  height: clamp(280px, 55vw, 623px);
   margin-inline: auto;
   background-position: center;
   background-size: cover;
@@ -1183,10 +1316,10 @@ img {
 }
 
 .contact-layout-figma {
-  grid-template-columns: minmax(240px, 280px) minmax(0, 430px);
+  grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
   align-items: start;
   justify-content: center;
-  gap: 5.5rem;
+  gap: clamp(1.5rem, 6vw, 5.5rem);
 }
 
 .contact-panel-figma,
@@ -1206,9 +1339,9 @@ img {
 }
 
 .contact-panel-figma p {
-  max-width: 260px;
+  max-width: 30rem;
   color: #272727;
-  font-size: 0.72rem;
+  font-size: clamp(0.95rem, 1.3vw, 1rem);
   line-height: 1.7;
   white-space: pre-line;
 }
@@ -1236,7 +1369,7 @@ img {
 
 .contact-form-figma label {
   color: #272727;
-  font-size: 0.62rem;
+  font-size: 0.82rem;
   line-height: 1.4;
 }
 
@@ -1246,8 +1379,8 @@ img {
   border: 1px solid #c9c9c9;
   border-radius: 0;
   background: white;
-  padding: 0.45rem 0.55rem;
-  font-size: 0.72rem;
+  padding: 0.7rem 0.8rem;
+  font-size: 0.95rem;
   color: #272727;
 }
 
@@ -1258,14 +1391,14 @@ img {
 
 .contact-send-button {
   min-width: 84px;
-  min-height: 28px;
-  padding: 0.35rem 1rem;
+  min-height: 42px;
+  padding: 0.6rem 1rem;
   border: none;
   border-radius: 0;
   background: #002992;
   color: white;
-  font-size: 0.62rem;
-  font-weight: 500;
+  font-size: 0.82rem;
+  font-weight: 700;
   transition: background-color 180ms ease;
 }
 
@@ -1320,7 +1453,7 @@ img {
 .status {
   min-height: 1rem;
   margin-top: 0.5rem;
-  font-size: 0.72rem;
+  font-size: 0.82rem;
 }
 
 .status.success {
@@ -1333,7 +1466,7 @@ img {
 
 .footer {
   background: white;
-  padding: 0 0 3rem;
+  padding: 0 0 clamp(2rem, 5vw, 3rem);
 }
 
 .footer-shell {
@@ -1370,8 +1503,8 @@ img {
   display: grid;
   position: relative;
   z-index: 1;
-  grid-template-columns: 1.4fr 0.8fr 1fr;
-  gap: 3rem;
+  grid-template-columns: minmax(0, 1.4fr) minmax(180px, 0.8fr) minmax(220px, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
 }
 
 .footer-copy,
@@ -1510,6 +1643,18 @@ img {
   }
 }
 
+@keyframes cta-button-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 980px) {
   .header-main,
   .home-about-grid,
@@ -1567,6 +1712,11 @@ img {
   .header-actions {
     justify-self: start;
     flex-wrap: wrap;
+  }
+
+  .header-locale {
+    width: 100%;
+    justify-content: space-between;
   }
 
   .header-contact {
@@ -1654,6 +1804,26 @@ img {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .hero-contact-link,
+  .about-button {
+    animation: none;
+    transition: none;
+  }
+
+  .hero-contact-link::before,
+  .about-button::before {
+    transition: none;
+  }
+
+  .hero-contact-link:hover,
+  .hero-contact-link:focus-visible,
+  .about-button:hover,
+  .about-button:focus-visible {
+    transform: none;
+  }
+}
+
 @media (max-width: 700px) {
   .site-frame {
     width: min(calc(100% - 1.2rem), var(--container));
@@ -1679,6 +1849,20 @@ img {
 
   .header-contact {
     align-items: flex-start;
+  }
+
+  .header-locale {
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .header-locale-label {
+    font-size: 0.74rem;
+  }
+
+  .locale-option {
+    min-width: 2.6rem;
+    padding: 0.44rem 0.65rem;
   }
 
   .header-contact-icon {
@@ -1757,17 +1941,18 @@ img {
   }
 
   .figma-hero {
-    min-height: 460px;
+    min-height: 420px;
   }
 
   .figma-hero-inner {
-    min-height: 460px;
+    min-height: 420px;
     align-items: end;
-    padding-bottom: 3rem;
+    padding-bottom: 2.5rem;
   }
 
   .figma-hero-copy {
-    padding-top: 0;
+    max-width: 19rem;
+    padding: 0;
   }
 
   .contact-panel-figma strong,
@@ -1781,5 +1966,19 @@ img {
 
   .contact-send-button {
     width: 100%;
+  }
+
+  .contact-form-figma input,
+  .contact-form-figma textarea {
+    font-size: 1rem;
+  }
+
+  .footer-subscribe {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-subscribe input,
+  .footer-subscribe button {
+    border-radius: 5px;
   }
 }

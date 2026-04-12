@@ -58,6 +58,7 @@ const ui = computed(() => getUiCopy(locale.value));
 const localizedServices = computed(() =>
   serviceCards.map((card, index) => ({
     ...card,
+    title: ui.value.home.serviceTitles[index],
     description: ui.value.home.serviceDescriptions[index]
   }))
 );
@@ -101,7 +102,7 @@ const offerCards = computed(() => [
 
     <section class="section">
       <div class="site-frame">
-        <div class="breadcrumbs">Home &gt; <span>{{ ui.services.breadcrumb }}</span></div>
+        <div class="breadcrumbs">{{ ui.common.home }} &gt; <span>{{ ui.services.breadcrumb }}</span></div>
         <SectionIntro label="" :title="ui.home.ourServices" />
         <div class="figma-services-grid">
           <article

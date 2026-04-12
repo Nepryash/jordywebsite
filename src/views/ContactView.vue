@@ -70,7 +70,7 @@ async function handleSubmit() {
 
     <section class="section contact-breadcrumb-section">
       <div class="site-frame">
-        <div class="breadcrumbs">Home &gt; <span>{{ ui.contact.breadcrumb }}</span></div>
+        <div class="breadcrumbs">{{ ui.common.home }} &gt; <span>{{ ui.contact.breadcrumb }}</span></div>
       </div>
     </section>
 
@@ -122,7 +122,7 @@ async function handleSubmit() {
             />
           </div>
           <div class="field hidden-subject" aria-hidden="true">
-            <input id="subject" v-model.trim="form.subject" placeholder="Subject" />
+            <input id="subject" v-model.trim="form.subject" :placeholder="ui.contact.message" />
           </div>
           <div class="field">
             <label for="message">{{ ui.contact.messageLabel }}</label>

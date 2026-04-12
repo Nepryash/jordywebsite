@@ -13,7 +13,7 @@ const props = defineProps<{
 
 const route = useRoute();
 const activePath = computed(() => route.path);
-const { locale } = useLocale();
+const { locale, setLocale } = useLocale();
 const ui = computed(() => getUiCopy(locale.value));
 const addressParts = computed(() => props.content.brand.address.split(",").map((part) => part.trim()));
 const addressLineOne = computed(() => addressParts.value.slice(0, -2).join(", ") || addressParts.value[0] || "");
@@ -53,6 +53,31 @@ const addressLineTwo = computed(() => addressParts.value.slice(-2).join(", ") ||
         </div>
       </div>
       <div class="header-actions">
+        <div class="header-locale">
+          <span class="header-locale-label">{{ ui.header.languages }}</span>
+          <div class="locale-switch" role="group" :aria-label="ui.header.languages">
+            <button
+              type="button"
+              class="locale-option"
+              :class="{ active: locale === 'en' }"
+              :aria-pressed="locale === 'en'"
+              :aria-label="ui.common.english"
+              @click="setLocale('en')"
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              class="locale-option"
+              :class="{ active: locale === 'nl' }"
+              :aria-pressed="locale === 'nl'"
+              :aria-label="ui.common.dutch"
+              @click="setLocale('nl')"
+            >
+              NL
+            </button>
+          </div>
+        </div>
         <RouterLink class="button request-button" to="/contact">{{ ui.header.requestService }}</RouterLink>
       </div>
     </div>

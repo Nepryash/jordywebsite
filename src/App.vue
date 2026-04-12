@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted } from "vue";
+import { computed, onMounted, watchEffect } from "vue";
 import SiteHeader from "./components/SiteHeader.vue";
 import SiteFooter from "./components/SiteFooter.vue";
 import { getUiCopy, translateContent, useLocale } from "./i18n";
@@ -17,6 +17,12 @@ const content = computed(() =>
   state.content ? translateContent(state.content, locale.value) : null
 );
 const ui = computed(() => getUiCopy(locale.value));
+
+watchEffect(() => {
+  if (typeof document !== "undefined") {
+    document.documentElement.lang = locale.value;
+  }
+});
 </script>
 
 <template>
