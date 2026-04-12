@@ -1,5 +1,0 @@
-
-> electro-business-site@1.0.0 dev:server
-> tsx watch server/index.ts
-
-Server running on http://localhost:3000

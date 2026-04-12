@@ -21,7 +21,7 @@ defineProps<{
 const form = reactive<ContactPayload>({
   name: "",
   email: "",
-  subject: "",
+  subject: "Website enquiry",
   message: ""
 });
 
@@ -40,7 +40,7 @@ async function handleSubmit() {
     const result = await submitContact(form);
     form.name = "";
     form.email = "";
-    form.subject = "";
+    form.subject = "Website enquiry";
     form.message = "";
     statusType.value = "success";
     statusText.value = result.message || ui.value.contact.sent;
@@ -105,30 +105,39 @@ async function handleSubmit() {
           </div>
         </div>
 
-        <form class="contact-form contact-form-figma reveal" @submit.prevent="handleSubmit">
+        <form
+          class="contact-form contact-form-figma reveal"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          @submit.prevent="handleSubmit"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="bot-field" />
           <strong>{{ ui.contact.message }}</strong>
           <div class="field">
             <label for="name">{{ ui.contact.fullName }}</label>
-            <input id="name" v-model.trim="form.name" :placeholder="ui.contact.fullName" required />
+            <input id="name" v-model.trim="form.name" name="name" :placeholder="ui.contact.fullName" required />
           </div>
           <div class="field">
             <label for="email">{{ ui.contact.email }}</label>
             <input
               id="email"
               v-model.trim="form.email"
+              name="email"
               type="email"
               :placeholder="ui.contact.email"
               required
             />
           </div>
-          <div class="field hidden-subject" aria-hidden="true">
-            <input id="subject" v-model.trim="form.subject" :placeholder="ui.contact.message" />
-          </div>
+          <input v-model.trim="form.subject" type="hidden" name="subject" />
           <div class="field">
             <label for="message">{{ ui.contact.messageLabel }}</label>
             <textarea
               id="message"
               v-model.trim="form.message"
+              name="message"
               rows="6"
               :placeholder="ui.contact.messageLabel"
               required
