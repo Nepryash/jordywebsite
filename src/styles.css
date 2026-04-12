@@ -535,7 +535,7 @@ img {
   bottom: 0;
   min-height: 67px;
   display: grid;
-  grid-template-columns: auto minmax(0, 16ch);
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
   justify-content: center;
   column-gap: 0.8rem;
@@ -545,16 +545,13 @@ img {
 
 .figma-service-bar-front h3 {
   margin: 0;
-  max-width: 16ch;
+  min-width: 0;
   color: white;
-  font-size: clamp(1.2rem, 1rem + 0.9vw, 1.625rem);
+  font-size: clamp(0.95rem, 0.75rem + 0.9vw, 1.35rem);
   font-weight: 600;
   line-height: 1.05;
   text-align: center;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-  hyphens: auto;
-  text-wrap: balance;
+  white-space: nowrap;
 }
 
 .figma-service-icon-front {
