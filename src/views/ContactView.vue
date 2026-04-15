@@ -2,17 +2,10 @@
 import { computed, reactive, ref } from "vue";
 import { submitContact } from "../api";
 import { getUiCopy, useLocale } from "../i18n";
+import { contactAssets } from "../localAssets";
 import type { ContactPayload, SiteContent } from "../types";
 
-const contactHero = "https://www.figma.com/api/mcp/asset/1dc84bd6-7c70-43f3-9e10-4f0f5bfbec14";
-const contactMap = "https://www.figma.com/api/mcp/asset/dcc1e36c-181a-4bb4-bcce-555ae4089beb";
-
-const socialIcons = [
-  { label: "Facebook", icon: "https://www.figma.com/api/mcp/asset/f55c4550-db81-479b-976f-bdb6be0731da" },
-  { label: "Twitter", icon: "https://www.figma.com/api/mcp/asset/b4696002-e2ed-4342-bf79-55e520a857dc" },
-  { label: "Instagram", icon: "https://www.figma.com/api/mcp/asset/22307d1b-2e42-45e7-959e-8d00863efc0d" },
-  { label: "Google Plus", icon: "https://www.figma.com/api/mcp/asset/384fd89f-4ce4-4469-9dcc-83ce3d059284" }
-] as const;
+const { contactHero, contactMap, socialIcons } = contactAssets;
 
 defineProps<{
   content: SiteContent;

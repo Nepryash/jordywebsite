@@ -2,10 +2,10 @@
 import { computed } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import { getUiCopy, useLocale } from "../i18n";
+import { headerAssets } from "../localAssets";
 import type { SiteContent } from "../types";
 
-const locationIcon = "https://www.figma.com/api/mcp/asset/d4ec733e-fbed-4382-af09-f8e41bbb7b24";
-const phoneIcon = "https://www.figma.com/api/mcp/asset/c3be41e6-0e43-4b11-a8fd-56ad65713afa";
+const { locationIcon, phoneIcon } = headerAssets;
 
 const props = defineProps<{
   content: SiteContent;

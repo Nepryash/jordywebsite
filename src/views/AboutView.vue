@@ -1,18 +1,11 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { getUiCopy, useLocale } from "../i18n";
+import { aboutAssets } from "../localAssets";
 import type { SiteContent } from "../types";
 
-const aboutHero = "https://www.figma.com/api/mcp/asset/a2e45287-f020-4374-8292-eb97b1c5e8e8";
-const aboutPhoto = "https://www.figma.com/api/mcp/asset/6486991a-487b-48c3-9e41-bb04df5b6436";
-const teamPhoto = "https://www.figma.com/api/mcp/asset/9da02164-4231-4e04-b935-2399e36a3b6b";
-const offerIcons = [
-  "https://www.figma.com/api/mcp/asset/0606edf4-d412-435d-b00c-fc68720a41b3",
-  "https://www.figma.com/api/mcp/asset/99f74162-43dd-4777-b5ef-92d6ef9e7f63",
-  "https://www.figma.com/api/mcp/asset/49d74707-5bec-4f82-b1f7-8273b5c44a2a"
-] as const;
-const emailIcon = "https://www.figma.com/api/mcp/asset/11854474-f044-4a43-bf15-033eeeaec136";
-const phoneIcon = "https://www.figma.com/api/mcp/asset/93a46698-293b-41a1-a418-f56774f51bf8";
+const { aboutHero, aboutPhoto, teamPhoto, featureIcons: offerIcons, emailIcon, phoneIcon } =
+  aboutAssets;
 
 defineProps<{
   content: SiteContent;

@@ -2,48 +2,46 @@
 import { computed } from "vue";
 import SectionIntro from "../components/SectionIntro.vue";
 import { getUiCopy, useLocale } from "../i18n";
+import { homeAssets, servicesAssets } from "../localAssets";
 import type { SiteContent } from "../types";
 
-const servicesHero =
-  "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1600&q=80";
-const allServicesBackground =
-  "https://www.figma.com/api/mcp/asset/8d19752c-d073-447e-a554-601c5f4caaf6";
+const { servicesHero, allServicesBackground } = servicesAssets;
 
 const serviceCards = [
   {
     title: "RESIDENTIAL",
-    image: "https://www.figma.com/api/mcp/asset/a03a3b9e-e169-499d-9605-e1a96370aee2",
-    icon: "https://www.figma.com/api/mcp/asset/c7686db4-8e4c-46b7-b518-12f5f1b3789f",
+    image: homeAssets.serviceCards[0].image,
+    icon: homeAssets.serviceCards[0].icon,
     nodeId: "3:20"
   },
   {
     title: "COMMERCIAL",
-    image: "https://www.figma.com/api/mcp/asset/92bfe91c-4f1c-4bb9-b27e-9e3bf9a68468",
-    icon: "https://www.figma.com/api/mcp/asset/5cfc5fde-23ca-4724-b9f7-c00c9550e435",
+    image: homeAssets.serviceCards[1].image,
+    icon: homeAssets.serviceCards[1].icon,
     nodeId: "3:21"
   },
   {
     title: "BREAKDOWN SERVICE",
-    image: "https://www.figma.com/api/mcp/asset/c6bcab7a-0dcf-4f07-81f9-ec610222d34b",
-    icon: "https://www.figma.com/api/mcp/asset/b67ec312-8e31-4056-a404-10fff3f79901",
+    image: homeAssets.serviceCards[2].image,
+    icon: homeAssets.serviceCards[2].icon,
     nodeId: "102:169"
   },
   {
     title: "SECURITY SYSTEMS",
-    image: "https://www.figma.com/api/mcp/asset/1b8e55b0-0b16-4541-8a8e-1eb4e1f41135",
-    icon: "https://www.figma.com/api/mcp/asset/4efd98a7-05e1-403a-8a89-70f983832366",
+    image: homeAssets.serviceCards[3].image,
+    icon: homeAssets.serviceCards[3].icon,
     nodeId: "102:210"
   },
   {
     title: "MAINTENANCE",
-    image: "https://www.figma.com/api/mcp/asset/f61b64c4-2325-4f30-bf9e-8d5a54109bf6",
-    icon: "https://www.figma.com/api/mcp/asset/328a45d5-0470-4b4b-9e92-517af0810c16",
+    image: homeAssets.serviceCards[4].image,
+    icon: homeAssets.serviceCards[4].icon,
     nodeId: "102:218"
   },
   {
     title: "INSTALLATIONS",
-    image: "https://www.figma.com/api/mcp/asset/d6b4980e-bac1-4a6d-959b-4e33dd9e2fe5",
-    icon: "https://www.figma.com/api/mcp/asset/df113130-09f6-474f-ac00-a55ad155cc1f",
+    image: homeAssets.serviceCards[5].image,
+    icon: homeAssets.serviceCards[5].icon,
     nodeId: "102:223"
   }
 ] as const;
@@ -67,19 +65,19 @@ const offerCards = computed(() => [
   {
     title: ui.value.home.offerTitles[0],
     description: ui.value.home.offerDescriptions[0],
-    icon: "https://www.figma.com/api/mcp/asset/d75d9a50-fa10-4f6d-9096-5671d97ecbd8",
+    icon: homeAssets.offerIcons[0],
     nodeId: "4:96"
   },
   {
     title: ui.value.home.offerTitles[1],
     description: ui.value.home.offerDescriptions[1],
-    icon: "https://www.figma.com/api/mcp/asset/b7c555cd-f1a1-4272-99ce-d9beb6600650",
+    icon: homeAssets.offerIcons[1],
     nodeId: "4:97"
   },
   {
     title: ui.value.home.offerTitles[2],
     description: ui.value.home.offerDescriptions[2],
-    icon: "https://www.figma.com/api/mcp/asset/906f25c6-4f5e-4740-b94f-e5b2f395cede",
+    icon: homeAssets.offerIcons[2],
     nodeId: "4:98"
   }
 ]);

@@ -2,16 +2,16 @@
 import { computed } from "vue";
 import { RouterLink } from "vue-router";
 import { getUiCopy, useLocale } from "../i18n";
+import { footerAssets } from "../localAssets";
 import type { SiteContent } from "../types";
 
-const brandMark = "https://www.figma.com/api/mcp/asset/2b9d5c5e-ff1a-424d-bd3e-0b2b44ad4309";
-const worldMap = "https://www.figma.com/api/mcp/asset/00d1f07b-385c-4cfa-a073-d14b883cea12";
+const { brandMark, worldMap, socialIcons: footerSocialIcons } = footerAssets;
 
 const socialIcons = [
-  { name: "Facebook", icon: "https://www.figma.com/api/mcp/asset/38a5aea4-30b5-4b0f-9fc1-831da53ad362", href: "#" },
-  { name: "Twitter", icon: "https://www.figma.com/api/mcp/asset/5113e76e-0e02-43fc-8dd9-ccb5ea803804", href: "#" },
-  { name: "Instagram", icon: "https://www.figma.com/api/mcp/asset/b3353516-6222-407c-b654-551c9f680dff", href: "#" },
-  { name: "Google Plus", icon: "https://www.figma.com/api/mcp/asset/7decf4ec-2eb1-4f6c-b2f1-0fdc2ce666e8", href: "#" }
+  { name: "Facebook", icon: footerSocialIcons.facebook, href: "#" },
+  { name: "Twitter", icon: footerSocialIcons.twitter, href: "#" },
+  { name: "Instagram", icon: footerSocialIcons.instagram, href: "#" },
+  { name: "Google Plus", icon: footerSocialIcons.google, href: "#" }
 ] as const;
 
 const exploreLinks = [
