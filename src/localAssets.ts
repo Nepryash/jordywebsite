@@ -1,16 +1,16 @@
 export const headerAssets = {
-  locationIcon: "/icons/header/location.png",
-  phoneIcon: "/icons/header/phone.png"
+  locationIcon: "/icons/header/location.svg",
+  phoneIcon: "/icons/header/phone.svg"
 } as const;
 
 export const footerAssets = {
-  brandMark: "/icons/footer/brand-mark.png",
+  brandMark: "/icons/footer/brand-mark.svg",
   worldMap: "/icons/footer/world-map.png",
   socialIcons: {
-    facebook: "/icons/footer/facebook.png",
-    twitter: "/icons/footer/twitter.png",
-    instagram: "/icons/footer/instagram.png",
-    google: "/icons/footer/google.png"
+    facebook: "/icons/footer/facebook.svg",
+    twitter: "/icons/footer/twitter.svg",
+    instagram: "/icons/footer/instagram.svg",
+    google: "/icons/footer/google.svg"
   }
 } as const;
 
@@ -18,12 +18,12 @@ export const homeAssets = {
   heroImage: "/images/home/hero.png",
   aboutImage: "/images/home/about.png",
   serviceCards: [
-    { image: "/images/home/service-1.png", icon: "/icons/home/service-1.png" },
-    { image: "/images/home/service-2.png", icon: "/icons/home/service-2.png" },
-    { image: "/images/home/service-3.png", icon: "/icons/home/service-3.png" },
-    { image: "/images/home/service-4.png", icon: "/icons/home/service-4.png" },
-    { image: "/images/home/service-5.png", icon: "/icons/home/service-5.png" },
-    { image: "/images/home/service-6.png", icon: "/icons/home/service-6.png" }
+    { image: "/images/home/service-1.png", icon: "/icons/home/service-1.svg" },
+    { image: "/images/home/service-2.png", icon: "/icons/home/service-2.svg" },
+    { image: "/images/home/service-3.png", icon: "/icons/home/service-3.svg" },
+    { image: "/images/home/service-4.png", icon: "/icons/home/service-4.svg" },
+    { image: "/images/home/service-5.png", icon: "/icons/home/service-5.svg" },
+    { image: "/images/home/service-6.png", icon: "/icons/home/service-6.svg" }
   ],
   projectImages: [
     "/images/home/project-1.png",
@@ -31,9 +31,9 @@ export const homeAssets = {
     "/images/home/project-3.png"
   ],
   offerIcons: [
-    "/icons/home/offer-1.png",
-    "/icons/home/offer-2.png",
-    "/icons/home/offer-3.png"
+    "/icons/home/offer-1.svg",
+    "/icons/home/offer-2.svg",
+    "/icons/home/offer-3.svg"
   ],
   testimonialImages: [
     "/images/home/testimonial-1.png",
@@ -47,22 +47,22 @@ export const aboutAssets = {
   aboutPhoto: "/images/about/photo.png",
   teamPhoto: "/images/about/team.png",
   featureIcons: [
-    "/icons/about/feature-1.png",
-    "/icons/about/feature-2.png",
-    "/icons/about/feature-3.png"
+    "/icons/about/feature-1.svg",
+    "/icons/about/feature-2.svg",
+    "/icons/about/feature-3.svg"
   ],
-  emailIcon: "/icons/about/email.png",
-  phoneIcon: "/icons/about/phone.png"
+  emailIcon: "/icons/about/email.svg",
+  phoneIcon: "/icons/about/phone.svg"
 } as const;
 
 export const contactAssets = {
   contactHero: "/images/contact/hero.png",
   contactMap: "/images/contact/map.png",
   socialIcons: [
-    { label: "Facebook", icon: "/icons/contact/facebook.png" },
-    { label: "Twitter", icon: "/icons/contact/twitter.png" },
-    { label: "Instagram", icon: "/icons/contact/instagram.png" },
-    { label: "Google Plus", icon: "/icons/contact/google.png" }
+    { label: "Facebook", icon: "/icons/contact/facebook.svg" },
+    { label: "Twitter", icon: "/icons/contact/twitter.svg" },
+    { label: "Instagram", icon: "/icons/contact/instagram.svg" },
+    { label: "Google Plus", icon: "/icons/contact/google.svg" }
   ]
 } as const;
 
