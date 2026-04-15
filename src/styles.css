@@ -1974,6 +1974,21 @@ img {
     width: 100%;
   }
 
+  .figma-service-content {
+    gap: 0.45rem;
+    padding: 67px 29px 35px;
+  }
+
+  .figma-service-content h3 {
+    margin: 0;
+    max-width: 324px;
+    line-height: 1.05;
+  }
+
+  .figma-service-icon-overlay {
+    height: 37.853px;
+  }
+
   .contact-form-figma input,
   .contact-form-figma textarea {
     font-size: 1rem;
