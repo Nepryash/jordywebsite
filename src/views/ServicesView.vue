@@ -119,6 +119,7 @@ const offerCards = computed(() => [
                 </div>
               </div>
               <div class="figma-service-face figma-service-face-back">
+                <img class="figma-service-image-back" :src="card.image" :alt="card.title" />
                 <div class="figma-service-back-layer"></div>
                 <div class="figma-service-content">
                   <img class="figma-service-icon-overlay" :src="card.icon" alt="" aria-hidden="true" />
