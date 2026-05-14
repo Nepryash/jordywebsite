@@ -1,117 +1,117 @@
 {
   "brand": {
     "name": "Strumpen",
-    "tagline": "Safe and secure electrical services you can trust.",
-    "phone": "+2348100112233",
+    "tagline": "Veilige en betrouwbare elektrotechnische service waarop u kunt vertrouwen.",
+    "phone": "+31 77 123 4567",
     "email": "service@strumpfenelectro.nl",
-    "address": "0012 Something Street, Venlo, Netherlands"
+    "address": "Kaldenkerkerweg 12, Venlo, Nederland"
   },
   "navigation": [
     { "label": "Home", "href": "/" },
-    { "label": "About", "href": "/about" },
-    { "label": "Services", "href": "/services" },
+    { "label": "Over ons", "href": "/about" },
+    { "label": "Diensten", "href": "/services" },
     { "label": "Contact", "href": "/contact" }
   ],
   "hero": {
-    "eyebrow": "Trusted Electrical Contractors",
-    "title": "SAFE AND SECURE",
-    "description": "We are a Service You Can Trust",
-    "primaryCta": { "label": "Contact Us Now", "href": "/contact" },
-    "secondaryCta": { "label": "Request A Service", "href": "/contact" },
+    "eyebrow": "Betrouwbare elektrotechnische aannemer",
+    "title": "Veilig en zeker",
+    "description": "Elektrotechnische service waarop u kunt vertrouwen",
+    "primaryCta": { "label": "Neem contact op", "href": "/contact" },
+    "secondaryCta": { "label": "Vraag service aan", "href": "/contact" },
     "stats": [
-      { "value": "1,200+", "label": "Projects completed" },
-      { "value": "24/7", "label": "Emergency coverage" },
-      { "value": "15 yrs", "label": "Field experience" }
+      { "value": "1.200+", "label": "Projecten afgerond" },
+      { "value": "24/7", "label": "Storingsdienst" },
+      { "value": "15 jaar", "label": "Praktijkervaring" }
     ]
   },
   "about": {
-    "title": "WE ARE STRUMPEN",
-    "description": "With over 8 years experience in the industry, adipiscing elit. Tortor vel posuere vitae enim, molestie. Diam consequat ac velit ac, morbi erat. Sed ipsum lorem feugiat iaculis sollicitudin molt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor vel posuere.",
+    "title": "Wij zijn Strumpen",
+    "description": "Met meer dan 8 jaar ervaring verzorgen wij veilige installaties, snelle storingsoplossingen en duidelijke communicatie van begin tot eind.",
     "highlights": [
-      "Free consultation before large-scope work",
-      "Clear documentation for every installation",
-      "Licensed experts for residential and industrial sites"
+      "Gratis advies vooraf bij grotere werkzaamheden",
+      "Heldere documentatie bij elke installatie",
+      "Ervaren specialisten voor woningen en bedrijfslocaties"
     ]
   },
   "services": [
     {
-      "title": "Residential Wiring",
-      "description": "Full rewires, panel upgrades, outlets, lighting, and fault resolution for homes and apartment buildings."
+      "title": "Woningbouw",
+      "description": "Veilige elektra voor woningen, appartementen en renovaties, van groepenkast tot verlichting."
     },
     {
-      "title": "Commercial Fit-Outs",
-      "description": "Electrical planning and delivery for offices, retail units, hospitality spaces, and mixed-use properties."
+      "title": "Utiliteitsbouw",
+      "description": "Installaties voor kantoren, winkels en bedrijfsruimtes, afgestemd op dagelijks gebruik."
     },
     {
-      "title": "Breakdown Response",
-      "description": "Rapid diagnostics and emergency repair services to restore power safely and reduce downtime."
+      "title": "Storingsservice",
+      "description": "Snelle diagnose en herstel bij storingen, met duidelijke uitleg over de oorzaak."
     },
     {
-      "title": "Security Systems",
-      "description": "CCTV, access control, alarms, and integrated low-voltage systems for safer operations."
+      "title": "Beveiligingssystemen",
+      "description": "Camerabeveiliging, toegangscontrole en alarminstallaties die passen bij uw locatie."
     },
     {
-      "title": "Maintenance",
-      "description": "Preventive inspections, scheduled servicing, and energy-efficiency improvements for ongoing reliability."
+      "title": "Onderhoud",
+      "description": "Periodieke controles en preventief onderhoud om uitval en onveilige situaties te voorkomen."
     },
     {
-      "title": "Installations",
-      "description": "Switchboards, lighting plans, EV chargers, backup power, and custom electrical infrastructure."
+      "title": "Installaties",
+      "description": "Nieuwe aansluitingen, laadpunten, verlichting en technische uitbreidingen netjes uitgevoerd."
     }
   ],
   "offers": [
     {
-      "title": "Safety Maintenance",
-      "description": "Routine inspections and corrective maintenance to reduce risk before faults turn into outages."
+      "title": "Veilig onderhoud",
+      "description": "Inspecties en onderhoud waarmee risico's vroeg zichtbaar worden en installaties betrouwbaar blijven."
     },
     {
-      "title": "Electrical Installation",
-      "description": "New power and lighting systems designed around your layout, budget, and future growth."
+      "title": "Elektrische installatie",
+      "description": "Nieuwe installaties en uitbreidingen die veilig, toekomstbestendig en overzichtelijk worden opgeleverd."
     },
     {
-      "title": "Service Maintenance",
-      "description": "Fast-response support packages with clear SLAs for business continuity and peace of mind."
+      "title": "Service en onderhoud",
+      "description": "Ondersteuning bij storingen, controles en verbeteringen, met korte lijnen en duidelijke planning."
     }
   ],
   "projects": [
     {
-      "title": "Industrial Retrofit",
-      "description": "Control panel modernization for a logistics facility with zero unplanned downtime."
+      "title": "Industriële retrofit",
+      "description": "Modernisering van besturingspanelen voor een logistieke locatie zonder ongeplande stilstand."
     },
     {
-      "title": "Office Expansion",
-      "description": "Structured cabling, lighting, and access control for a growing Amsterdam headquarters."
+      "title": "Kantooruitbreiding",
+      "description": "Databekabeling, verlichting en toegangscontrole voor een groeiend kantoor."
     },
     {
-      "title": "Apartment Upgrade",
-      "description": "Panel replacement and energy-efficient lighting rollout across a residential block."
+      "title": "Appartementenupgrade",
+      "description": "Groepenkastvervanging en energiezuinige verlichting voor een wooncomplex."
     }
   ],
   "testimonials": [
     {
       "name": "Mina Verhoeven",
-      "role": "Facilities Manager",
-      "quote": "The team coordinated around our operating hours and delivered a clean, well-documented install."
+      "role": "Venlo",
+      "quote": "Strakke planning, nette afwerking en duidelijke communicatie vanaf de eerste opname tot de oplevering."
     },
     {
       "name": "Ruben de Wit",
-      "role": "Property Developer",
-      "quote": "Communication stayed clear from quote to handover, and the emergency support is excellent."
+      "role": "Eindhoven",
+      "quote": "De storing was snel verholpen en we kregen meteen praktisch advies om herhaling te voorkomen."
     },
     {
       "name": "Sophie Kramer",
-      "role": "Homeowner",
-      "quote": "They solved a persistent wiring issue that two previous contractors missed. Professional and reassuring."
+      "role": "Roermond",
+      "quote": "Professionele monteurs die afspraken nakomen en op locatie meedenken over veilige oplossingen."
     }
   ],
   "team": [
-    { "name": "John Wilson", "role": "Lead Electrical Engineer" },
-    { "name": "Anika Vos", "role": "Project Coordinator" },
-    { "name": "Daan Smit", "role": "Maintenance Specialist" }
+    { "name": "Daan Smit", "role": "Elektricien" },
+    { "name": "Anika Vos", "role": "Projectcoördinator" },
+    { "name": "Jeroen Peeters", "role": "Onderhoudsspecialist" }
   ],
   "contact": {
-    "intro": "Tell us what you need help with and we will respond with next steps, availability, and an estimated timeline.",
-    "officeHours": "Mon - Sat: 08:00 - 18:00",
-    "responseTime": "Typical reply within 1 business day"
+    "intro": "Laat ons weten waarmee wij u kunnen helpen. Wij reageren met de volgende stappen, beschikbaarheid en een indicatieve planning.",
+    "officeHours": "Ma - za: 08:00 - 18:00",
+    "responseTime": "Meestal antwoord binnen 1 werkdag"
   }
 }

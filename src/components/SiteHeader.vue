@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { RouterLink, useRoute } from "vue-router";
-import { getUiCopy, useLocale } from "../i18n";
+import { getUiCopy } from "../i18n";
 import { headerAssets } from "../localAssets";
 import type { SiteContent } from "../types";
 
@@ -13,8 +13,7 @@ const props = defineProps<{
 
 const route = useRoute();
 const activePath = computed(() => route.path);
-const { locale, setLocale } = useLocale();
-const ui = computed(() => getUiCopy(locale.value));
+const ui = computed(() => getUiCopy());
 const addressParts = computed(() => props.content.brand.address.split(",").map((part) => part.trim()));
 const addressLineOne = computed(() => addressParts.value.slice(0, -2).join(", ") || addressParts.value[0] || "");
 const addressLineTwo = computed(() => addressParts.value.slice(-2).join(", ") || props.content.brand.address);
@@ -38,14 +37,14 @@ const addressLineTwo = computed(() => addressParts.value.slice(-2).join(", ") ||
         </svg>
         <span class="header-brand-name" data-node-id="1:4">{{ props.content.brand.name.toUpperCase() }}</span>
       </RouterLink>
-      <div class="header-contact" data-node-id="1:5">
+      <div class="header-contact header-contact-address" data-node-id="1:5">
         <img class="header-contact-icon" :src="locationIcon" alt="" aria-hidden="true" />
         <div>
           <small>{{ addressLineOne }}</small>
           <strong class="header-contact-location">{{ addressLineTwo }}</strong>
         </div>
       </div>
-      <div class="header-contact" data-node-id="2:9">
+      <div class="header-contact header-contact-phone-link" data-node-id="2:9">
         <img class="header-contact-icon header-contact-icon-phone" :src="phoneIcon" alt="" aria-hidden="true" />
         <div>
           <small>{{ ui.header.callUs }}</small>
@@ -53,31 +52,6 @@ const addressLineTwo = computed(() => addressParts.value.slice(-2).join(", ") ||
         </div>
       </div>
       <div class="header-actions">
-        <div class="header-locale">
-          <span class="header-locale-label">{{ ui.header.languages }}</span>
-          <div class="locale-switch" role="group" :aria-label="ui.header.languages">
-            <button
-              type="button"
-              class="locale-option"
-              :class="{ active: locale === 'en' }"
-              :aria-pressed="locale === 'en'"
-              :aria-label="ui.common.english"
-              @click="setLocale('en')"
-            >
-              EN
-            </button>
-            <button
-              type="button"
-              class="locale-option"
-              :class="{ active: locale === 'nl' }"
-              :aria-pressed="locale === 'nl'"
-              :aria-label="ui.common.dutch"
-              @click="setLocale('nl')"
-            >
-              NL
-            </button>
-          </div>
-        </div>
         <RouterLink class="button request-button" to="/contact">{{ ui.header.requestService }}</RouterLink>
       </div>
     </div>

@@ -34,7 +34,7 @@ export async function submitContact(payload: ContactPayload): Promise<ContactRes
       });
 
   if (!response.ok) {
-    const fallbackMessage = "Unable to send your request.";
+    const fallbackMessage = "Uw aanvraag kon niet worden verzonden.";
 
     if (isLocalhost()) {
       const result = (await response.json()) as ContactResponse;
@@ -50,6 +50,6 @@ export async function submitContact(payload: ContactPayload): Promise<ContactRes
 
   return {
     ok: true,
-    message: "Your request has been sent. Our team will follow up shortly."
+    message: "Uw aanvraag is verzonden. Ons team neemt binnenkort contact met u op."
   };
 }

@@ -12,10 +12,10 @@ const submissionsFile = path.join(dataDir, "submissions.json");
 const port = Number(process.env.PORT || 3000);
 
 const submissionSchema = z.object({
-  name: z.string().trim().min(2, "Name must be at least 2 characters."),
-  email: z.string().trim().email("A valid email address is required."),
-  subject: z.string().trim().min(3, "Subject must be at least 3 characters."),
-  message: z.string().trim().min(10, "Message must be at least 10 characters.")
+  name: z.string().trim().min(2, "Vul minimaal 2 tekens in voor uw naam."),
+  email: z.string().trim().email("Vul een geldig e-mailadres in."),
+  subject: z.string().trim().min(3, "Vul een onderwerp van minimaal 3 tekens in."),
+  message: z.string().trim().min(10, "Vul een bericht van minimaal 10 tekens in.")
 });
 
 type Submission = z.infer<typeof submissionSchema> & {
@@ -74,7 +74,7 @@ app.post("/api/contact", (request: Request, response: Response) => {
 
   response.status(201).json({
     ok: true,
-    message: "Your request has been sent. Our team will follow up shortly."
+    message: "Uw aanvraag is verzonden. Ons team neemt binnenkort contact met u op."
   });
 });
 

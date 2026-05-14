@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { getUiCopy, useLocale } from "../i18n";
+import { getUiCopy } from "../i18n";
 import { aboutAssets } from "../localAssets";
 import type { SiteContent } from "../types";
 
@@ -11,8 +11,7 @@ defineProps<{
   content: SiteContent;
 }>();
 
-const { locale } = useLocale();
-const ui = computed(() => getUiCopy(locale.value));
+const ui = computed(() => getUiCopy());
 
 const featureCards = computed(() =>
   ui.value.about.featureTitles.map((title, index) => ({
@@ -22,18 +21,10 @@ const featureCards = computed(() =>
 );
 
 const aboutParagraphs = computed(() => {
-  if (locale.value === "nl") {
-    return [
-      "Met meer dan 8 jaar ervaring in de sector leveren wij veilige installaties, snelle storingsoplossingen en duidelijke communicatie van begin tot eind.",
-      "Wij combineren technisch vakmanschap met een zorgvuldige planning zodat projecten voor woningen en bedrijfsruimtes zonder onnodige vertraging worden uitgevoerd.",
-      "Van inspectie en montage tot onderhoud en noodhulp: ons team werkt netjes, transparant en met aandacht voor langdurige betrouwbaarheid."
-    ];
-  }
-
   return [
-    "With over 8 years experience in the industry, adipiscing elit. Tortor vel posuere vitae enim, molestie. Diam consequat ac velit ac, morbi erat. Sed ipsum lorem feugiat iaculis sollicitudin molt.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor vel posuereWith over 8 years experience in the industry, adipiscing elit. Tortor vel posuere vitae enim, molestie. Diam consequat ac velit ac, morbi erat. Sed ipsum lorem feugiat iaculis sollicitudin molt.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor vel posuereWith over 8 years experience in the industry, adipiscing elit. Tortor vel posuere vitae enim, molestie. Diam consequat ac velit ac, morbi erat. Sed ipsum lorem feugiat iaculis sollicitudin molt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor vel posuereWith over 8 years experience in the industry, adipiscing elit. Tortor vel posuere vitae enim, molestie."
+    "Met meer dan 8 jaar ervaring in de sector leveren wij veilige installaties, snelle storingsoplossingen en duidelijke communicatie van begin tot eind.",
+    "Wij combineren technisch vakmanschap met een zorgvuldige planning, zodat werkzaamheden in woningen en bedrijfsruimtes zonder onnodige vertraging worden uitgevoerd.",
+    "Van inspectie en montage tot onderhoud en noodhulp: ons team werkt netjes, transparant en met aandacht voor langdurige betrouwbaarheid."
   ];
 });
 </script>
@@ -56,7 +47,7 @@ const aboutParagraphs = computed(() => {
         <div class="breadcrumbs about-figma-breadcrumbs" data-node-id="8:554">{{ ui.common.home }} &gt; <span data-node-id="8:555">{{ ui.about.breadcrumb }}</span></div>
         <div class="about-figma-layout">
           <div class="about-figma-photo">
-            <img :src="aboutPhoto" alt="Electro team at work" data-node-id="8:558" />
+            <img :src="aboutPhoto" alt="Elektromonteur aan het werk" data-node-id="8:558" />
           </div>
           <div class="about-figma-copy">
             <h2 data-node-id="8:556">{{ ui.about.welcome }}</h2>
@@ -95,11 +86,11 @@ const aboutParagraphs = computed(() => {
             <h3 data-node-id="8:605">{{ ui.about.teamName }}</h3>
             <div class="about-figma-team-contact">
               <img :src="emailIcon" alt="" aria-hidden="true" />
-              <span>electrician1@electro.com</span>
+              <span>service@strumpfenelectro.nl</span>
             </div>
             <div class="about-figma-team-contact">
               <img :src="phoneIcon" alt="" aria-hidden="true" />
-              <span>+2340011887711</span>
+              <span>+31 77 123 4567</span>
             </div>
           </article>
         </div>

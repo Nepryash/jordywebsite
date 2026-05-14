@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { RouterLink } from "vue-router";
-import { getUiCopy, useLocale } from "../i18n";
+import { getUiCopy } from "../i18n";
 import { footerAssets } from "../localAssets";
 import type { SiteContent } from "../types";
 
@@ -15,21 +15,20 @@ const socialIcons = [
 ] as const;
 
 const exploreLinks = [
-  { label: { en: "Home", nl: "Home" }, href: "/" },
-  { label: { en: "Services", nl: "Diensten" }, href: "/services" },
-  { label: { en: "Contact Us", nl: "Contact" }, href: "/contact" },
-  { label: { en: "About Us", nl: "Over ons" }, href: "/about" },
-  { label: { en: "Projects", nl: "Projecten" }, href: "/" },
-  { label: { en: "Testimonial", nl: "Reviews" }, href: "/" },
-  { label: { en: "FAQ", nl: "FAQ" }, href: "/" }
+  { label: "Home", href: "/" },
+  { label: "Diensten", href: "/services" },
+  { label: "Contact", href: "/contact" },
+  { label: "Over ons", href: "/about" },
+  { label: "Projecten", href: "/" },
+  { label: "Reviews", href: "/" },
+  { label: "FAQ", href: "/" }
 ] as const;
 
 defineProps<{
   content: SiteContent;
 }>();
 
-const { locale } = useLocale();
-const ui = computed(() => getUiCopy(locale.value));
+const ui = computed(() => getUiCopy());
 </script>
 
 <template>
@@ -53,8 +52,8 @@ const ui = computed(() => getUiCopy(locale.value));
           <div class="footer-explore">
             <strong class="footer-heading">{{ ui.footer.explore }}</strong>
             <div class="footer-links">
-              <RouterLink v-for="item in exploreLinks" :key="item.label.en" :to="item.href">
-                {{ item.label[locale] }}
+              <RouterLink v-for="item in exploreLinks" :key="item.label" :to="item.href">
+                {{ item.label }}
               </RouterLink>
             </div>
           </div>

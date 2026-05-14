@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import SectionIntro from "../components/SectionIntro.vue";
-import { getUiCopy, useLocale } from "../i18n";
+import { getUiCopy } from "../i18n";
 import { homeAssets, servicesAssets } from "../localAssets";
 import type { SiteContent } from "../types";
 
@@ -9,37 +9,37 @@ const { servicesHero, allServicesBackground } = servicesAssets;
 
 const serviceCards = [
   {
-    title: "RESIDENTIAL",
+    title: "Woningbouw",
     image: homeAssets.serviceCards[0].image,
     icon: homeAssets.serviceCards[0].icon,
     nodeId: "3:20"
   },
   {
-    title: "COMMERCIAL",
+    title: "Utiliteitsbouw",
     image: homeAssets.serviceCards[1].image,
     icon: homeAssets.serviceCards[1].icon,
     nodeId: "3:21"
   },
   {
-    title: "BREAKDOWN SERVICE",
+    title: "Storingsservice",
     image: homeAssets.serviceCards[2].image,
     icon: homeAssets.serviceCards[2].icon,
     nodeId: "102:169"
   },
   {
-    title: "SECURITY SYSTEMS",
+    title: "Beveiligingssystemen",
     image: homeAssets.serviceCards[3].image,
     icon: homeAssets.serviceCards[3].icon,
     nodeId: "102:210"
   },
   {
-    title: "MAINTENANCE",
+    title: "Onderhoud",
     image: homeAssets.serviceCards[4].image,
     icon: homeAssets.serviceCards[4].icon,
     nodeId: "102:218"
   },
   {
-    title: "INSTALLATIONS",
+    title: "Installaties",
     image: homeAssets.serviceCards[5].image,
     icon: homeAssets.serviceCards[5].icon,
     nodeId: "102:223"
@@ -50,8 +50,7 @@ defineProps<{
   content: SiteContent;
 }>();
 
-const { locale } = useLocale();
-const ui = computed(() => getUiCopy(locale.value));
+const ui = computed(() => getUiCopy());
 
 const localizedServices = computed(() =>
   serviceCards.map((card, index) => ({

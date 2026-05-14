@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, reactive, ref } from "vue";
 import { submitContact } from "../api";
-import { getUiCopy, useLocale } from "../i18n";
+import { getUiCopy } from "../i18n";
 import { contactAssets } from "../localAssets";
 import type { ContactPayload, SiteContent } from "../types";
 
@@ -14,12 +14,11 @@ defineProps<{
 const form = reactive<ContactPayload>({
   name: "",
   email: "",
-  subject: "Website enquiry",
+  subject: "Websiteaanvraag",
   message: ""
 });
 
-const { locale } = useLocale();
-const ui = computed(() => getUiCopy(locale.value));
+const ui = computed(() => getUiCopy());
 const sending = ref(false);
 const statusText = ref("");
 const statusType = ref<"idle" | "success" | "error">("idle");
@@ -33,7 +32,7 @@ async function handleSubmit() {
     const result = await submitContact(form);
     form.name = "";
     form.email = "";
-    form.subject = "Website enquiry";
+    form.subject = "Websiteaanvraag";
     form.message = "";
     statusType.value = "success";
     statusText.value = result.message || ui.value.contact.sent;
@@ -79,11 +78,11 @@ async function handleSubmit() {
           <p>
             {{ ui.contact.infoCopy }}
             <br />
-            0012, Chiranci Street Kano, Nigeria
+            Kaldenkerkerweg 12, Venlo, Nederland
             <br />
-            electro@mailservice.com
+            service@strumpfenelectro.nl
             <br />
-            +2348100112233
+            +31 77 123 4567
           </p>
           <div class="contact-socials contact-socials-figma">
             <a
