@@ -27,7 +27,7 @@ const serviceCards = [
     nodeId: "102:169"
   },
   {
-    title: "Beveiligingssystemen",
+    title: "EV-laadpalen",
     image: homeAssets.serviceCards[3].image,
     icon: homeAssets.serviceCards[3].icon,
     nodeId: "102:210"
@@ -132,25 +132,30 @@ const testimonials = computed(() => [
     >
       <div class="site-frame figma-hero-inner">
         <div class="figma-hero-copy">
+          <div class="figma-hero-kicker">{{ content.brand.name }}</div>
           <h1>{{ content.hero.title }}</h1>
           <p>{{ content.hero.description }}</p>
+          <div class="hero-service-pills" aria-label="Werkgebieden">
+            <span>{{ localizedServices[0].title }}</span>
+            <span>{{ localizedServices[1].title }}</span>
+            <span>{{ localizedServices[2].title }}</span>
+          </div>
           <RouterLink class="hero-contact-link" :to="content.hero.primaryCta.href">
             {{ content.hero.primaryCta.label }}
           </RouterLink>
         </div>
-        <div class="hero-depth-scene" aria-hidden="true">
-          <span class="hero-depth-panel hero-depth-panel-main">
-            <span class="hero-depth-node"></span>
-            <span class="hero-depth-line"></span>
-            <span class="hero-depth-node hero-depth-node-small"></span>
-          </span>
-          <span class="hero-depth-panel hero-depth-panel-mid">
-            <span class="hero-depth-line"></span>
-            <span class="hero-depth-node hero-depth-node-small"></span>
-          </span>
-          <span class="hero-depth-panel hero-depth-panel-back">
-            <span class="hero-depth-node"></span>
-            <span class="hero-depth-line"></span>
+        <div class="hero-installation-scene" aria-hidden="true">
+          <span class="installation-panel">
+            <span class="installation-panel-label"></span>
+            <span class="installation-lamp">
+              <span class="installation-lamp-glow"></span>
+              <span class="installation-lamp-bulb"></span>
+              <span class="installation-lamp-base"></span>
+            </span>
+            <span class="installation-path installation-path-top"></span>
+            <span class="installation-path installation-path-bottom"></span>
+            <span class="installation-current installation-current-a"></span>
+            <span class="installation-current installation-current-b"></span>
           </span>
         </div>
       </div>
@@ -222,6 +227,7 @@ const testimonials = computed(() => [
     <section class="home-projects">
       <div class="site-frame">
         <div class="figma-section-title figma-section-title-tight">
+          <span class="figma-section-eyebrow">Recente projecten</span>
           <h2 data-node-id="4:43">{{ ui.home.recentProjects }}</h2>
         </div>
         <div class="recent-project-grid" data-node-id="4:42">
@@ -240,6 +246,7 @@ const testimonials = computed(() => [
     <section class="home-testimonials">
       <div class="site-frame">
         <div class="figma-section-title figma-section-title-tight">
+          <span class="figma-section-eyebrow">Klanten</span>
           <h2 data-node-id="4:47">{{ ui.home.customersSay }}</h2>
         </div>
         <div class="testimonial-grid">

@@ -27,7 +27,7 @@ const serviceCards = [
     nodeId: "102:169"
   },
   {
-    title: "Beveiligingssystemen",
+    title: "EV-laadpalen",
     image: homeAssets.serviceCards[3].image,
     icon: homeAssets.serviceCards[3].icon,
     nodeId: "102:210"

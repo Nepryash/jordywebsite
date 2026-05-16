@@ -19,9 +19,7 @@ const exploreLinks = [
   { label: "Diensten", href: "/services" },
   { label: "Contact", href: "/contact" },
   { label: "Over ons", href: "/about" },
-  { label: "Projecten", href: "/" },
-  { label: "Reviews", href: "/" },
-  { label: "FAQ", href: "/" }
+  { label: "Reviews", href: "/" }
 ] as const;
 
 defineProps<{
@@ -40,7 +38,7 @@ const ui = computed(() => getUiCopy());
           <div class="footer-lead">
             <div class="footer-brand">
               <img class="footer-brand-mark" :src="brandMark" alt="" aria-hidden="true" />
-              <strong>ELECTRO</strong>
+              <strong>{{ content.brand.name.toUpperCase() }}</strong>
             </div>
             <p class="footer-copy footer-copy-figma">{{ ui.footer.lead }}</p>
             <div class="footer-contact-lines">
@@ -59,13 +57,8 @@ const ui = computed(() => getUiCopy());
           </div>
 
           <div class="footer-newsletter">
-            <strong class="footer-heading">{{ ui.footer.newsletter }}</strong>
-            <form class="footer-subscribe" @submit.prevent>
-              <input type="email" :aria-label="ui.common.emailAddress" />
-              <button type="submit">{{ ui.footer.subscribe }}</button>
-            </form>
-
             <strong class="footer-heading footer-social-heading">{{ ui.footer.socials }}</strong>
+            <p class="footer-social-copy">Volg updates en recente werkzaamheden via onze sociale kanalen.</p>
             <div class="footer-socials">
               <a
                 v-for="social in socialIcons"
@@ -79,7 +72,9 @@ const ui = computed(() => getUiCopy());
             </div>
           </div>
         </div>
-        <p class="footer-copyright">Strumpen © 2022</p>
+        <div class="footer-bottom">
+          <p class="footer-copyright">{{ content.brand.name }} &copy; 2026</p>
+        </div>
       </div>
     </div>
   </footer>

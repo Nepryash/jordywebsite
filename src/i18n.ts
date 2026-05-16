@@ -81,7 +81,7 @@ const uiCopy: UiCopy = {
   },
   header: {
     callUs: "Bel ons gerust",
-    requestService: "Vraag service aan"
+    requestService: "Neem contact op"
   },
   home: {
     readMore: "Lees meer",
@@ -95,7 +95,7 @@ const uiCopy: UiCopy = {
       "Woningbouw",
       "Utiliteitsbouw",
       "Storingsservice",
-      "Beveiligingssystemen",
+      "EV-laadpalen",
       "Onderhoud",
       "Installaties"
     ],
@@ -103,7 +103,7 @@ const uiCopy: UiCopy = {
       "Veilige elektra voor woningen, appartementen en renovaties, van groepenkast tot verlichting.",
       "Installaties voor kantoren, winkels en bedrijfsruimtes, afgestemd op dagelijks gebruik.",
       "Snelle diagnose en herstel bij storingen, met duidelijke uitleg over de oorzaak.",
-      "Camerabeveiliging, toegangscontrole en alarminstallaties die passen bij uw locatie.",
+      "Plaatsing en uitbreiding van EV-laadpalen voor woningen en bedrijfslocaties, netjes aangesloten en gebruiksklaar.",
       "Periodieke controles en preventief onderhoud om uitval en onveilige situaties te voorkomen.",
       "Nieuwe aansluitingen, laadpunten, verlichting en technische uitbreidingen netjes uitgevoerd."
     ],

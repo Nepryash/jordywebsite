@@ -21,7 +21,7 @@ export const homeAssets = {
     { image: "/images/home/service-1.png", icon: "/icons/home/service-1.svg" },
     { image: "/images/home/service-2.png", icon: "/icons/home/service-2.svg" },
     { image: "/images/home/service-3.png", icon: "/icons/home/service-3.svg" },
-    { image: "/images/home/service-4.png", icon: "/icons/home/service-4.svg" },
+    { image: "/images/services/laadpal.avif", icon: "/icons/home/service-4.svg" },
     { image: "/images/home/service-5.png", icon: "/icons/home/service-5.svg" },
     { image: "/images/home/service-6.png", icon: "/icons/home/service-6.svg" }
   ],

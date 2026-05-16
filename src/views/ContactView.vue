@@ -7,7 +7,7 @@ import type { ContactPayload, SiteContent } from "../types";
 
 const { contactHero, contactMap, socialIcons } = contactAssets;
 
-defineProps<{
+const props = defineProps<{
   content: SiteContent;
 }>();
 
@@ -22,6 +22,22 @@ const ui = computed(() => getUiCopy());
 const sending = ref(false);
 const statusText = ref("");
 const statusType = ref<"idle" | "success" | "error">("idle");
+const contactDetails = computed(() => [
+  {
+    label: "Adres",
+    value: props.content.brand.address
+  },
+  {
+    label: "E-mail",
+    value: props.content.brand.email,
+    href: `mailto:${props.content.brand.email}`
+  },
+  {
+    label: "Telefoon",
+    value: props.content.brand.phone,
+    href: `tel:${props.content.brand.phone}`
+  }
+]);
 
 async function handleSubmit() {
   sending.value = true;
@@ -55,7 +71,10 @@ async function handleSubmit() {
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.41), rgba(0, 0, 0, 0.41)), url(${contactHero})`
           }"
         >
-          <h1>{{ ui.contact.title }}</h1>
+          <div class="contact-hero-copy">
+            <h1>{{ ui.contact.title }}</h1>
+            <p>{{ props.content.contact.intro }}</p>
+          </div>
         </div>
       </div>
     </section>
@@ -74,16 +93,20 @@ async function handleSubmit() {
     <section class="section contact-main-section">
       <div class="site-frame contact-layout contact-layout-figma">
         <div class="contact-panel contact-panel-figma reveal">
+          <span class="contact-section-label">{{ props.content.brand.name }}</span>
           <strong>{{ ui.contact.info }}</strong>
-          <p>
-            {{ ui.contact.infoCopy }}
-            <br />
-            Kaldenkerkerweg 12, Venlo, Nederland
-            <br />
-            service@strumpfenelectro.nl
-            <br />
-            +31 77 123 4567
-          </p>
+          <p>{{ ui.contact.infoCopy }}</p>
+          <div class="contact-detail-list">
+            <div v-for="detail in contactDetails" :key="detail.label" class="contact-detail-item">
+              <span class="contact-detail-label">{{ detail.label }}</span>
+              <a v-if="detail.href" class="contact-detail-value" :href="detail.href">{{ detail.value }}</a>
+              <span v-else class="contact-detail-value">{{ detail.value }}</span>
+            </div>
+          </div>
+          <div class="contact-meta-chips" aria-label="Servicegegevens">
+            <span>{{ props.content.contact.officeHours }}</span>
+            <span>{{ props.content.contact.responseTime }}</span>
+          </div>
           <div class="contact-socials contact-socials-figma">
             <a
               v-for="social in socialIcons"
@@ -107,7 +130,9 @@ async function handleSubmit() {
         >
           <input type="hidden" name="form-name" value="contact" />
           <input type="hidden" name="bot-field" />
+          <span class="contact-section-label">Aanvraag</span>
           <strong>{{ ui.contact.message }}</strong>
+          <p class="contact-form-intro">Laat kort weten waar u hulp bij nodig heeft. Wij reageren met de vervolgstappen.</p>
           <div class="field">
             <label for="name">{{ ui.contact.fullName }}</label>
             <input id="name" v-model.trim="form.name" name="name" :placeholder="ui.contact.fullName" required />
