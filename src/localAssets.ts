@@ -1,4 +1,6 @@
 export const headerAssets = {
+  logo: "/logo1.png",
+  logoFallback: "/icons/footer/brand-mark.svg",
   locationIcon: "/icons/header/location.svg",
   phoneIcon: "/icons/header/phone.svg"
 } as const;

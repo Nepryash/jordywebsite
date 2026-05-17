@@ -22,6 +22,7 @@ const ui = computed(() => getUiCopy());
 const sending = ref(false);
 const statusText = ref("");
 const statusType = ref<"idle" | "success" | "error">("idle");
+const whatsappNumber = "31681046041";
 const contactDetails = computed(() => [
   {
     label: "Adres",
@@ -39,19 +40,41 @@ const contactDetails = computed(() => [
   }
 ]);
 
+function buildWhatsappHref(payload: ContactPayload) {
+  const text = [
+    "Nieuwe aanvraag via de website:",
+    `Naam: ${payload.name}`,
+    `E-mail: ${payload.email}`,
+    `Onderwerp: ${payload.subject}`,
+    `Bericht: ${payload.message}`
+  ].join("\n");
+
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+}
+
 async function handleSubmit() {
   sending.value = true;
   statusType.value = "idle";
   statusText.value = ui.value.contact.sendingStatus;
 
   try {
-    const result = await submitContact(form);
+    const submission = {
+      name: form.name,
+      email: form.email,
+      subject: form.subject,
+      message: form.message
+    };
+    const result = await submitContact(submission);
     form.name = "";
     form.email = "";
     form.subject = "Websiteaanvraag";
     form.message = "";
     statusType.value = "success";
     statusText.value = result.message || ui.value.contact.sent;
+
+    if (typeof window !== "undefined") {
+      window.open(buildWhatsappHref(submission), "_blank", "noopener,noreferrer");
+    }
   } catch (error) {
     statusType.value = "error";
     statusText.value = error instanceof Error ? error.message : ui.value.contact.failed;

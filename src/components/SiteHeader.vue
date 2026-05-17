@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import { getUiCopy } from "../i18n";
 import { headerAssets } from "../localAssets";
 import type { SiteContent } from "../types";
 
-const { locationIcon, phoneIcon } = headerAssets;
+const { logo, logoFallback, locationIcon, phoneIcon } = headerAssets;
 
 const props = defineProps<{
   content: SiteContent;
@@ -17,25 +17,26 @@ const ui = computed(() => getUiCopy());
 const addressParts = computed(() => props.content.brand.address.split(",").map((part) => part.trim()));
 const addressLineOne = computed(() => addressParts.value.slice(0, -2).join(", ") || addressParts.value[0] || "");
 const addressLineTwo = computed(() => addressParts.value.slice(-2).join(", ") || props.content.brand.address);
-const whatsappHref = "#";
+const whatsappHref = "https://wa.me/31681046041";
+const headerLogoSrc = ref<string>(logo);
+
+function handleHeaderLogoError() {
+  if (headerLogoSrc.value !== logoFallback) {
+    headerLogoSrc.value = logoFallback;
+  }
+}
 </script>
 
 <template>
   <header class="site-header">
     <div class="site-frame header-main">
       <RouterLink class="header-brand" to="/" data-node-id="8:506">
-        <svg
+        <img
           class="header-brand-icon"
-          viewBox="0 0 100 100"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <rect width="100" height="100" rx="12" fill="#1d36a7" />
-          <path
-            d="M10 18 L46 48 C48 50 47 54 43 54 H36 C32 54 31 59 35 61 L92 98 L58 26 C56 21 53 14 50 8 H10 Z"
-            fill="#000000"
-          />
-        </svg>
+          :src="headerLogoSrc"
+          :alt="`${props.content.brand.name} logo`"
+          @error="handleHeaderLogoError"
+        />
         <span class="header-brand-name" data-node-id="1:4">{{ props.content.brand.name.toUpperCase() }}</span>
       </RouterLink>
       <div class="header-contact header-contact-address" data-node-id="1:5">
@@ -53,7 +54,7 @@ const whatsappHref = "#";
         </div>
       </div>
       <div class="header-actions">
-        <a class="button whatsapp-button" :href="whatsappHref" aria-label="WhatsApp">
+        <a class="button whatsapp-button" :href="whatsappHref" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
           <svg class="whatsapp-button-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path
               fill="currentColor"
