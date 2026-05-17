@@ -8,9 +8,7 @@ export const footerAssets = {
   worldMap: "/icons/footer/world-map.png",
   socialIcons: {
     facebook: "/icons/footer/facebook.svg",
-    twitter: "/icons/footer/twitter.svg",
-    instagram: "/icons/footer/instagram.svg",
-    google: "/icons/footer/google.svg"
+    instagram: "/icons/footer/instagram.svg"
   }
 } as const;
 
@@ -59,10 +57,8 @@ export const contactAssets = {
   contactHero: "/images/contact/hero.png",
   contactMap: "/images/contact/map.png",
   socialIcons: [
-    { label: "Facebook", icon: "/icons/contact/facebook.svg" },
-    { label: "Twitter", icon: "/icons/contact/twitter.svg" },
     { label: "Instagram", icon: "/icons/contact/instagram.svg" },
-    { label: "Google Plus", icon: "/icons/contact/google.svg" }
+    { label: "Facebook", icon: "/icons/contact/facebook.svg" }
   ]
 } as const;
 

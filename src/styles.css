@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@400;500;700;900&display=swap");
 
 :root {
   --page-width: 1512px;
@@ -20,22 +20,34 @@
   --scroll-progress: 0;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
-  font-family: "Google Sans", sans-serif;
+  min-height: 100dvh;
+  font-family: "Roboto", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text);
   background:
     radial-gradient(circle at top left, rgba(255, 215, 74, 0.14), transparent 28%),
     linear-gradient(180deg, #f7f3eb 0%, #f2eee5 100%);
-  overflow-x: clip;
+  overflow-x: hidden;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  min-height: 100dvh;
 }
 
 h1,
@@ -54,31 +66,63 @@ a {
 
 button,
 input,
-textarea {
+textarea,
+select {
   font: inherit;
 }
 
 img {
   display: block;
   max-width: 100%;
+  height: auto;
+}
+
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(29, 54, 167, 0.26);
+  outline-offset: 3px;
 }
 
 .screen-state {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   place-items: center;
   padding: 2rem;
 }
 
 .screen-card {
-  background: white;
+  background: var(--surface-soft);
   padding: 1rem 1.25rem;
-  border-radius: 8px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
 }
 
 .site-frame {
   width: min(calc(100% - (var(--gutter) * 2)), var(--container));
   margin: 0 auto;
+}
+
+.site-shell {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  min-width: 0;
+  flex: 1 0 auto;
 }
 
 .site-header {
@@ -87,6 +131,7 @@ img {
   z-index: 30;
   background: rgba(247, 243, 235, 0.9);
   backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(9, 21, 51, 0.08);
 }
 
@@ -104,6 +149,7 @@ img {
   gap: 0.8rem;
   color: var(--blue);
   font-weight: 700;
+  min-width: 0;
 }
 
 .header-brand-icon {
@@ -118,6 +164,8 @@ img {
   font-weight: 400;
   line-height: 1;
   color: var(--blue);
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .header-contact {
@@ -241,12 +289,14 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-width: 0;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
   gap: 2rem;
+  min-width: 0;
 }
 
 .nav-link {
@@ -732,7 +782,8 @@ img {
 .home-about-visual img {
   width: 100%;
   max-width: 420px;
-  height: 380px;
+  aspect-ratio: 420 / 380;
+  height: auto;
   object-fit: cover;
   border-radius: 28px;
   box-shadow: var(--shadow-strong);
@@ -870,6 +921,8 @@ img {
   line-height: 1.05;
   text-align: center;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .figma-service-icon-front {
@@ -911,6 +964,7 @@ img {
   padding: 4.1rem 1.8rem 1.9rem;
   text-align: center;
   color: white;
+  min-width: 0;
 }
 
 .figma-service-content h3 {
@@ -1428,6 +1482,7 @@ img {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem;
+  min-width: 0;
 }
 
 .about-photo-panel img {
@@ -1490,6 +1545,7 @@ img {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+  min-width: 0;
 }
 
 .feature,
@@ -1761,7 +1817,7 @@ img {
 }
 
 .contact-map-shell {
-  width: min(1512px, 100vw);
+  width: min(100%, 1512px);
   height: clamp(260px, 40vw, 480px);
   margin-inline: auto;
   border-radius: 28px;
@@ -2035,8 +2091,9 @@ img {
   right: 1.6rem;
   left: auto;
   top: 1.35rem;
-  width: 320px;
-  height: 174px;
+  width: clamp(220px, 32vw, 320px);
+  aspect-ratio: 320 / 174;
+  height: auto;
   object-fit: cover;
   opacity: 0.08;
   pointer-events: none;
@@ -2049,6 +2106,7 @@ img {
   grid-template-columns: minmax(0, 1.65fr) minmax(160px, 0.7fr) minmax(200px, 0.8fr);
   gap: clamp(1rem, 2.5vw, 2.2rem);
   align-items: start;
+  min-width: 0;
 }
 
 .footer-copy,
@@ -2171,10 +2229,10 @@ img {
 }
 
 .footer-social-link img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-}
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+  }
 
 .footer-bottom {
   position: relative;
@@ -2479,39 +2537,32 @@ main > section.scroll-reveal.is-visible {
 
   .figma-service-card-inner {
     position: relative;
-    display: grid;
-    grid-template-rows: auto auto;
+    display: block;
     transform: none;
     transition: none;
   }
 
   .figma-service-face {
-    position: relative;
-    inset: auto;
+    position: absolute;
+    inset: 0;
     overflow: hidden;
   }
 
   .figma-service-face-front {
-    aspect-ratio: 16 / 10;
-    min-height: 0;
+    display: none;
   }
 
   .figma-service-face-back {
+    position: relative;
+    inset: auto;
     transform: none;
-    aspect-ratio: 16 / 10;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition:
-      max-height 780ms cubic-bezier(0.16, 1, 0.3, 1),
-      opacity 420ms ease,
-      transform 780ms cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .figma-service-card-flip.scroll-reveal.is-visible .figma-service-face-back {
-    max-height: clamp(13rem, 42vw, 15rem);
+    aspect-ratio: 4 / 3;
+    max-height: none;
     opacity: 1;
-    transform: translateY(0);
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    transition: none;
   }
 
   .figma-service-image-front,
@@ -2524,16 +2575,18 @@ main > section.scroll-reveal.is-visible {
   }
 
   .figma-service-content {
-    min-height: auto;
-    padding: 1rem 1.05rem 1.15rem;
-    justify-items: start;
-    align-content: start;
-    text-align: left;
+    min-height: 100%;
+    width: min(100%, 20rem);
+    padding: 1.15rem 1.2rem 1.25rem;
+    justify-items: center;
+    align-content: center;
+    text-align: center;
+    gap: 0.35rem;
   }
 
   .figma-service-content h3,
   .figma-service-content p {
-    text-align: left;
+    text-align: center;
   }
 
   .hero-installation-scene {
@@ -2893,8 +2946,9 @@ main > section.scroll-reveal.is-visible {
 
   .figma-service-bar-front h3 {
     font-size: clamp(0.95rem, 0.75rem + 0.9vw, 1.2rem);
-    white-space: nowrap;
     text-align: center;
+    white-space: normal;
+    text-wrap: balance;
   }
 
   .contact-send-button {
@@ -2921,15 +2975,14 @@ main > section.scroll-reveal.is-visible {
 
   .figma-service-icon-overlay {
     display: block;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 0.15rem;
   }
 
   .figma-service-face-front,
   .figma-service-face-back {
     aspect-ratio: 4 / 3;
-  }
-
-  .figma-service-card-flip.scroll-reveal.is-visible .figma-service-face-back {
-    max-height: clamp(11.5rem, 58vw, 13.5rem);
   }
 
   .offer-card,
