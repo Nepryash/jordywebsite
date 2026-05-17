@@ -8,10 +8,8 @@ import type { SiteContent } from "../types";
 const { brandMark, worldMap, socialIcons: footerSocialIcons } = footerAssets;
 
 const socialIcons = [
-  { name: "Facebook", icon: footerSocialIcons.facebook, href: "#" },
-  { name: "Twitter", icon: footerSocialIcons.twitter, href: "#" },
   { name: "Instagram", icon: footerSocialIcons.instagram, href: "#" },
-  { name: "Google Plus", icon: footerSocialIcons.google, href: "#" }
+  { name: "Facebook", icon: footerSocialIcons.facebook, href: "#" }
 ] as const;
 
 const exploreLinks = [

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import SectionIntro from "../components/SectionIntro.vue";
 import { getUiCopy } from "../i18n";
 import { homeAssets, servicesAssets } from "../localAssets";
 import type { SiteContent } from "../types";
@@ -100,7 +99,9 @@ const offerCards = computed(() => [
     <section class="section">
       <div class="site-frame">
         <div class="breadcrumbs">{{ ui.common.home }} &gt; <span>{{ ui.services.breadcrumb }}</span></div>
-        <SectionIntro label="" :title="ui.home.ourServices" />
+        <div class="figma-section-title">
+          <h2 data-node-id="4:14">{{ ui.home.ourServices }}</h2>
+        </div>
         <div class="figma-services-grid">
           <article
             v-for="(card, index) in localizedServices"
@@ -134,38 +135,16 @@ const offerCards = computed(() => [
 
     <section class="section">
       <div class="site-frame">
-        <SectionIntro
-          label=""
-          :title="ui.home.weOffer"
-          :copy="ui.services.weOfferCopy"
-        />
+        <div class="figma-section-title">
+          <h2 data-node-id="4:14">{{ ui.home.weOffer }}</h2>
+          <p data-node-id="4:17">{{ ui.services.weOfferCopy }}</p>
+        </div>
         <div class="offer-card-grid" data-node-id="19:1028">
           <article v-for="offer in offerCards" :key="offer.title" class="offer-card" :data-node-id="offer.nodeId">
             <img class="offer-card-icon" :src="offer.icon" alt="" aria-hidden="true" />
             <h3>{{ offer.title }}</h3>
             <p>{{ offer.description }}</p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section brochure-band-section">
-      <div class="site-frame brochure-band">
-        <div class="download-block">
-          <div class="download-icon">&#8681;</div>
-          <div>
-            <strong>{{ ui.services.brochure }}</strong>
-            <p>{{ ui.services.brochureCopy }}</p>
-          </div>
-          <button class="download-button" type="button">{{ ui.services.download }}</button>
-        </div>
-        <div class="download-block">
-          <div class="download-icon">&#164;</div>
-          <div>
-            <strong>{{ ui.services.priceList }}</strong>
-            <p>{{ ui.services.priceListCopy }}</p>
-          </div>
-          <button class="download-button" type="button">{{ ui.services.download }}</button>
         </div>
       </div>
     </section>
