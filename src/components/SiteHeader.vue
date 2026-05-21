@@ -37,7 +37,10 @@ function handleHeaderLogoError() {
           :alt="`${props.content.brand.name} logo`"
           @error="handleHeaderLogoError"
         />
-        <span class="header-brand-name" data-node-id="1:4">{{ props.content.brand.name.toUpperCase() }}</span>
+        <span class="header-brand-copy">
+          <span class="header-brand-name" data-node-id="1:4">{{ props.content.brand.name.toUpperCase() }}</span>
+          <span class="header-brand-subtitle">Elektrotechniek</span>
+        </span>
       </RouterLink>
       <div class="header-contact header-contact-address" data-node-id="1:5">
         <img class="header-contact-icon" :src="locationIcon" alt="" aria-hidden="true" />

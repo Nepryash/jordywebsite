@@ -16,19 +16,19 @@ export const footerAssets = {
 
 export const homeAssets = {
   heroImage: "/images/home/hero.png",
-  aboutImage: "/images/home/about.png",
+  aboutImage: "/images/home/JordyCar-removebg-preview.png",
   serviceCards: [
-    { image: "/images/home/service-1.png", icon: "/icons/home/service-1.svg" },
-    { image: "/images/home/service-2.png", icon: "/icons/home/service-2.svg" },
+    { image: "/images/services/woningbouw.jfif", icon: "/icons/home/service-1.svg" },
+    { image: "/images/services/utiliteitsbouw.png", icon: "/icons/home/service-2.svg" },
     { image: "/images/home/service-3.png", icon: "/icons/home/service-3.svg" },
     { image: "/images/services/laadpal.avif", icon: "/icons/home/service-4.svg" },
-    { image: "/images/home/service-5.png", icon: "/icons/home/service-5.svg" },
-    { image: "/images/home/service-6.png", icon: "/icons/home/service-6.svg" }
+    { image: "/images/services/onderhoud.jfif", icon: "/icons/home/service-5.svg" },
+    { image: "/images/services/service-6.png", icon: "/icons/home/service-6.svg" }
   ],
   projectImages: [
-    "/images/home/project-1.png",
-    "/images/home/project-2.png",
-    "/images/home/project-3.png"
+    "/images/services/recenteprojecten1.jpeg",
+    "/images/services/recenteprojecten2.jfif",
+    "/images/services/Recenteprojecten (2).jfif"
   ],
   offerIcons: [
     "/icons/home/offer-1.svg",
@@ -59,8 +59,8 @@ export const contactAssets = {
   contactHero: "/images/contact/hero.png",
   contactMap: "/images/contact/map.png",
   socialIcons: [
-    { label: "Instagram", icon: "/icons/contact/instagram.svg" },
-    { label: "Facebook", icon: "/icons/contact/facebook.svg" }
+    { label: "Instagram", icon: "/icons/footer/instagram.svg" },
+    { label: "Facebook", icon: "/icons/footer/facebook.svg" }
   ]
 } as const;
 

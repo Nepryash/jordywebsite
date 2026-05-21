@@ -4,8 +4,7 @@ import { getUiCopy } from "../i18n";
 import { aboutAssets } from "../localAssets";
 import type { SiteContent } from "../types";
 
-const { aboutHero, aboutPhoto, teamPhoto, featureIcons: offerIcons, emailIcon, phoneIcon } =
-  aboutAssets;
+const { aboutHero, aboutPhoto, featureIcons: offerIcons } = aboutAssets;
 
 defineProps<{
   content: SiteContent;
@@ -68,32 +67,6 @@ const aboutParagraphs = computed(() => {
           <h3>{{ feature.title }}</h3>
           <p>{{ ui.about.featureDescription }}</p>
         </article>
-      </div>
-    </section>
-
-    <section class="about-figma-team">
-      <div class="site-frame">
-        <div class="about-figma-team-head">
-          <h2 data-node-id="8:590">{{ ui.about.teamTitle }}</h2>
-          <p data-node-id="8:592">{{ ui.about.teamCopy }}</p>
-        </div>
-        <div class="about-figma-team-card-wrap">
-          <article class="about-figma-team-card" data-node-id="8:618">
-            <div class="about-figma-team-image-wrap">
-              <img class="about-figma-team-image" :src="teamPhoto" :alt="ui.about.teamName" data-node-id="8:593" />
-              <div class="about-figma-team-role" data-node-id="8:602">{{ ui.about.teamRole }}</div>
-            </div>
-            <h3 data-node-id="8:605">{{ ui.about.teamName }}</h3>
-            <div class="about-figma-team-contact">
-              <img :src="emailIcon" alt="" aria-hidden="true" />
-              <span>service@strumpfenelectro.nl</span>
-            </div>
-            <div class="about-figma-team-contact">
-              <img :src="phoneIcon" alt="" aria-hidden="true" />
-              <span>+31 77 123 4567</span>
-            </div>
-          </article>
-        </div>
       </div>
     </section>
   </main>

@@ -97,7 +97,7 @@ const uiCopy: UiCopy = {
       "Storingsservice",
       "EV-laadpalen",
       "Onderhoud",
-      "Installaties"
+      "Renovatie"
     ],
     serviceDescriptions: [
       "Veilige elektra voor woningen, appartementen en renovaties, van groepenkast tot verlichting.",

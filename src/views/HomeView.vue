@@ -99,29 +99,6 @@ const offerCards = computed(() => [
   }
 ]);
 
-const testimonials = computed(() => [
-  {
-    quote: ui.value.home.customerQuotes[0],
-    name: ui.value.home.customerNames[0],
-    location: ui.value.home.customerLocations[0],
-    image: homeAssets.testimonialImages[0],
-    nodeId: "4:99"
-  },
-  {
-    quote: ui.value.home.customerQuotes[1],
-    name: ui.value.home.customerNames[1],
-    location: ui.value.home.customerLocations[1],
-    image: homeAssets.testimonialImages[1],
-    nodeId: "4:100"
-  },
-  {
-    quote: ui.value.home.customerQuotes[2],
-    name: ui.value.home.customerNames[2],
-    location: ui.value.home.customerLocations[2],
-    image: homeAssets.testimonialImages[2],
-    nodeId: "4:101"
-  }
-]);
 </script>
 
 <template>
@@ -164,12 +141,39 @@ const testimonials = computed(() => [
     <section class="home-about">
       <div class="site-frame home-about-grid">
         <div class="home-about-copy">
-          <h2>{{ content.about.title }}</h2>
-          <p>{{ content.about.description }}</p>
+          <h2>Wij zijn Strumpen</h2>
+          <p>
+            Met meer dan 8 jaar ervaring verzorgen wij veilige installaties, snelle
+            storingsoplossingen en duidelijke communicatie van begin tot eind.
+          </p>
+          <div class="home-about-stats" aria-label="Resultaten">
+            <article class="home-about-stat">
+              <strong>150+</strong>
+              <span>Projecten afgerond</span>
+            </article>
+            <article class="home-about-stat">
+              <strong>5★</strong>
+              <span>Gemiddelde beoordeling</span>
+            </article>
+            <article class="home-about-stat">
+              <strong>100%</strong>
+              <span>Gecertificeerd</span>
+            </article>
+          </div>
           <RouterLink class="about-button" to="/about">{{ ui.home.readMore }}</RouterLink>
         </div>
         <div class="home-about-visual">
-          <img :src="aboutImage" alt="Elektromonteur werkt aan technische infrastructuur" />
+          <div class="home-about-vehicle-stage">
+            <span class="home-about-vehicle-aura" aria-hidden="true"></span>
+            <span class="home-about-vehicle-grid" aria-hidden="true"></span>
+            <span class="home-about-vehicle-route" aria-hidden="true"></span>
+            <div class="home-about-vehicle-frame" aria-hidden="true">
+              <span class="home-about-vehicle-frame-label">Servicebus</span>
+            </div>
+            <img :src="aboutImage" alt="Strumpen servicebus" class="home-about-vehicle" />
+            <div class="home-about-vehicle-badge home-about-vehicle-badge-top">Op weg naar montage</div>
+            <div class="home-about-vehicle-badge home-about-vehicle-badge-bottom">Storingen, aanleg en onderhoud</div>
+          </div>
         </div>
       </div>
     </section>
@@ -238,32 +242,6 @@ const testimonials = computed(() => [
             :data-node-id="project.nodeId"
           >
             <img :src="project.image" :alt="project.alt" />
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-testimonials">
-      <div class="site-frame">
-        <div class="figma-section-title figma-section-title-tight">
-          <span class="figma-section-eyebrow">Klanten</span>
-          <h2 data-node-id="4:47">{{ ui.home.customersSay }}</h2>
-        </div>
-        <div class="testimonial-grid">
-          <article
-            v-for="testimonial in testimonials"
-            :key="testimonial.name"
-            class="figma-testimonial-card"
-            :data-node-id="testimonial.nodeId"
-          >
-            <p class="figma-testimonial-quote">{{ testimonial.quote }}</p>
-            <div class="figma-testimonial-person">
-              <img :src="testimonial.image" :alt="testimonial.name" />
-              <div>
-                <h3>{{ testimonial.name }}</h3>
-                <span>{{ testimonial.location }}</span>
-              </div>
-            </div>
           </article>
         </div>
       </div>
