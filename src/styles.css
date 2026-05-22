@@ -3244,7 +3244,7 @@ main > section.scroll-reveal.is-visible {
 
   .home-about-vehicle {
     left: 50%;
-    top: 54%;
+    top: calc(54% - 20px);
     width: 58%;
   }
 
@@ -3517,7 +3517,7 @@ main > section.scroll-reveal.is-visible {
 
   .home-about-vehicle {
     left: 50%;
-    top: 56%;
+    top: calc(56% - 20px);
     width: 54%;
   }
 
