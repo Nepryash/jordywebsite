@@ -15,9 +15,8 @@ const socialIcons = [
 const exploreLinks = [
   { label: "Home", href: "/" },
   { label: "Diensten", href: "/services" },
-  { label: "Contact", href: "/contact" },
   { label: "Over ons", href: "/about" },
-  { label: "Reviews", href: "/" }
+  { label: "Contact", href: "/contact" }
 ] as const;
 
 defineProps<{

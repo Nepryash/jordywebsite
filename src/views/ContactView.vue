@@ -22,7 +22,7 @@ const ui = computed(() => getUiCopy());
 const sending = ref(false);
 const statusText = ref("");
 const statusType = ref<"idle" | "success" | "error">("idle");
-const whatsappNumber = "31681046041";
+const whatsappNumber = "31636394319";
 const contactDetails = computed(() => [
   {
     label: "Adres",

@@ -17,7 +17,8 @@ const ui = computed(() => getUiCopy());
 const addressParts = computed(() => props.content.brand.address.split(",").map((part) => part.trim()));
 const addressLineOne = computed(() => addressParts.value.slice(0, -2).join(", ") || addressParts.value[0] || "");
 const addressLineTwo = computed(() => addressParts.value.slice(-2).join(", ") || props.content.brand.address);
-const whatsappHref = "https://wa.me/31681046041";
+const whatsappHref = "https://wa.me/31636394319";
+const phoneHref = "tel:+31636394319";
 const headerLogoSrc = ref<string>(logo);
 
 function handleHeaderLogoError() {
@@ -66,7 +67,7 @@ function handleHeaderLogoError() {
           </svg>
           <span>WhatsApp</span>
         </a>
-        <RouterLink class="button request-button" to="/contact">{{ ui.header.requestService }}</RouterLink>
+        <a class="button request-button" :href="phoneHref">{{ ui.header.requestService }}</a>
       </div>
     </div>
     <div class="menu-bar">
