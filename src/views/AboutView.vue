@@ -21,9 +21,9 @@ const featureCards = computed(() =>
 
 const aboutParagraphs = computed(() => {
   return [
-    "Met meer dan 8 jaar ervaring in de sector leveren wij veilige installaties, snelle storingsoplossingen en duidelijke communicatie van begin tot eind.",
-    "Wij combineren technisch vakmanschap met een zorgvuldige planning, zodat werkzaamheden in woningen en bedrijfsruimtes zonder onnodige vertraging worden uitgevoerd.",
-    "Van inspectie en montage tot onderhoud en noodhulp: ons team werkt netjes, transparant en met aandacht voor langdurige betrouwbaarheid."
+    "Met meer dan 8 jaar ervaring in de sector levert Strumpen Elektrotechniek veilige installaties, snelle storingsoplossingen en duidelijke communicatie van begin tot eind.",
+    "Technisch vakmanschap wordt gecombineerd met zorgvuldige planning, zodat werkzaamheden in woningen en bedrijfsruimtes zonder onnodige vertraging worden uitgevoerd.",
+    "Van inspectie en montage tot onderhoud en noodhulp: elke opdracht wordt netjes, transparant en met aandacht voor langdurige betrouwbaarheid uitgevoerd."
   ];
 });
 </script>

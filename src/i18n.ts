@@ -80,17 +80,17 @@ const uiCopy: UiCopy = {
     emailAddress: "E-mailadres"
   },
   header: {
-    callUs: "Bel ons gerust",
+    callUs: "Telephone",
     requestService: "Neem contact op"
   },
   home: {
     readMore: "Lees meer",
-    ourServices: "Onze diensten",
-    weOffer: "Wat wij bieden",
+    ourServices: "Diensten van Strumpen Elektrotechniek",
+    weOffer: "Zekerheid in elektrotechniek",
     weOfferIntro:
-      "Wij verzorgen elektrotechnische werkzaamheden voor woningen en bedrijfspanden, met heldere afspraken en een nette oplevering.",
+      "Strumpen Elektrotechniek verzorgt werkzaamheden voor woningen en bedrijfspanden met heldere afspraken en een nette oplevering.",
     recentProjects: "Recente projecten",
-    customersSay: "Wat klanten zeggen",
+    customersSay: "Ervaringen van klanten",
     serviceTitles: [
       "Woningbouw",
       "Utiliteitsbouw",
@@ -117,30 +117,30 @@ const uiCopy: UiCopy = {
     customerLocations: ["Venlo", "Eindhoven", "Roermond"],
     customerQuotes: [
       "Strakke planning, nette afwerking en duidelijke communicatie vanaf de eerste opname tot de oplevering.",
-      "De storing was snel verholpen en we kregen meteen praktisch advies om herhaling te voorkomen.",
-      "Professionele monteurs die afspraken nakomen en op locatie meedenken over veilige oplossingen."
+      "De storing was snel verholpen en Strumpen Elektrotechniek gaf direct praktisch advies om herhaling te voorkomen.",
+      "Professionele uitvoering, duidelijke afspraken en zorgvuldig advies over veilige oplossingen."
     ]
   },
   about: {
-    title: "Over ons",
-    welcome: "Welkom bij Strumpen",
-    breadcrumb: "Over ons",
-    featureTitles: ["Gratis offerte", "24/7 bereikbaar", "Eerlijke prijzen"],
+    title: "Over Strumpen Elektrotechniek",
+    welcome: "Strumpen Elektrotechniek",
+    breadcrumb: "Over Strumpen",
+    featureTitles: ["Vrijblijvende offerte", "Bereikbaar voor storingen", "Transparante tarieven"],
     featureDescription:
-      "U krijgt vooraf duidelijkheid over aanpak, planning en kosten, zodat u weet waar u aan toe bent.",
-    teamTitle: "Ons team",
+      "Vooraf is er duidelijkheid over aanpak, planning en kosten, zodat elke opdracht overzichtelijk start.",
+    teamTitle: "Specialist in elektrotechniek",
     teamCopy:
-      "Onze monteurs combineren vakkennis met zorg voor uw woning of werkplek. Netjes werken hoort bij het vak.",
-    teamName: "Daan Smit",
-    teamRole: "Elektricien"
+      "Vakmanschap, nette uitvoering en zorg voor woning of werkplek vormen de basis van iedere opdracht.",
+    teamName: "Strumpen Elektrotechniek",
+    teamRole: "Elektrotechnisch specialist"
   },
   services: {
     title: "Diensten",
     breadcrumb: "Diensten",
     weOfferCopy:
-      "Van advies en installatie tot onderhoud en storingshulp: wij houden uw elektrische voorzieningen veilig en bruikbaar.",
-    brochure: "Onze brochure",
-    brochureCopy: "Download onze brochure voor een compact overzicht van de diensten.",
+      "Van advies en installatie tot onderhoud en storingshulp: Strumpen Elektrotechniek houdt elektrische voorzieningen veilig en bruikbaar.",
+    brochure: "Brochure",
+    brochureCopy: "Download de brochure voor een compact overzicht van de diensten.",
     priceList: "Prijslijst",
     priceListCopy: "Download de prijslijst voor een indicatie van veelvoorkomende werkzaamheden.",
     download: "Downloaden",
@@ -176,7 +176,7 @@ const uiCopy: UiCopy = {
     title: "Contact",
     breadcrumb: "Contact",
     info: "Contactgegevens",
-    message: "Stuur ons een bericht",
+    message: "Bericht aan Strumpen Elektrotechniek",
     fullName: "Volledige naam",
     email: "E-mailadres",
     messageLabel: "Bericht",
@@ -186,7 +186,7 @@ const uiCopy: UiCopy = {
     sent: "Uw aanvraag is verzonden.",
     failed: "Uw aanvraag kon niet worden verzonden.",
     infoCopy:
-      "Beschrijf kort waarmee wij kunnen helpen. We reageren met de vervolgstappen, beschikbaarheid en een indicatieve planning."
+      "Beschrijf kort waarvoor elektrotechnische ondersteuning nodig is. Strumpen Elektrotechniek reageert met vervolgstappen, beschikbaarheid en een indicatieve planning."
   },
   footer: {
     explore: "Ontdek",

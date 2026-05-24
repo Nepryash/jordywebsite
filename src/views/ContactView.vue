@@ -42,7 +42,7 @@ const contactDetails = computed(() => [
 
 function buildWhatsappHref(payload: ContactPayload) {
   const text = [
-    "Nieuwe aanvraag via de website:",
+    "Nieuwe aanvraag via Strumpen Elektrotechniek:",
     `Naam: ${payload.name}`,
     `E-mail: ${payload.email}`,
     `Onderwerp: ${payload.subject}`,
@@ -167,7 +167,7 @@ async function handleSubmit() {
           <input type="hidden" name="bot-field" />
           <span class="contact-section-label">Aanvraag</span>
           <strong>{{ ui.contact.message }}</strong>
-          <p class="contact-form-intro">Laat kort weten waar u hulp bij nodig heeft. Wij reageren met de vervolgstappen.</p>
+          <p class="contact-form-intro">Beschrijf kort waarvoor elektrotechnische ondersteuning nodig is. Strumpen Elektrotechniek reageert met de vervolgstappen.</p>
           <div class="field">
             <label for="name">{{ ui.contact.fullName }}</label>
             <input id="name" v-model.trim="form.name" name="name" :placeholder="ui.contact.fullName" required />

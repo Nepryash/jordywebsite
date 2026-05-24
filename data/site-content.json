@@ -1,36 +1,63 @@
 {
   "brand": {
-    "name": "Strumpen",
-    "tagline": "Veilige en betrouwbare elektrotechnische service waarop u kunt vertrouwen.",
+    "name": "Strumpen Elektrotechniek",
+    "tagline": "Professionele elektrotechnische service waarop u kunt vertrouwen.",
     "phone": "+31 6 36394319",
     "email": "strumpenelektrotechniek@gmail.com",
     "address": "Kuilveld 28, Grubbenvorst, Limburg, Nederland"
   },
   "navigation": [
-    { "label": "Home", "href": "/" },
-    { "label": "Over ons", "href": "/about" },
-    { "label": "Diensten", "href": "/services" },
-    { "label": "Contact", "href": "/contact" }
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Over Strumpen",
+      "href": "/about"
+    },
+    {
+      "label": "Diensten",
+      "href": "/services"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
   ],
   "hero": {
     "eyebrow": "Betrouwbare elektrotechnische aannemer",
     "title": "Veilig en zeker",
-    "description": "Elektrotechnische service waarop u kunt vertrouwen",
-    "primaryCta": { "label": "Neem contact op", "href": "/contact" },
-    "secondaryCta": { "label": "Vraag service aan", "href": "/contact" },
+    "description": "Strumpen Elektrotechniek - service waarop u kunt vertrouwen",
+    "primaryCta": {
+      "label": "Neem contact op",
+      "href": "/contact"
+    },
+    "secondaryCta": {
+      "label": "Service aanvragen",
+      "href": "/contact"
+    },
     "stats": [
-      { "value": "1.200+", "label": "Projecten afgerond" },
-      { "value": "24/7", "label": "Storingsdienst" },
-      { "value": "15 jaar", "label": "Praktijkervaring" }
+      {
+        "value": "1.200+",
+        "label": "Projecten afgerond"
+      },
+      {
+        "value": "24/7",
+        "label": "Storingsdienst"
+      },
+      {
+        "value": "15 jaar",
+        "label": "Praktijkervaring"
+      }
     ]
   },
   "about": {
-    "title": "Wij zijn Strumpen",
-    "description": "Met meer dan 8 jaar ervaring verzorgen wij veilige installaties, snelle storingsoplossingen en duidelijke communicatie van begin tot eind.",
+    "title": "Strumpen Elektrotechniek",
+    "description": "Met meer dan 8 jaar ervaring staat Strumpen Elektrotechniek voor veilige installaties, snelle storingsoplossingen en duidelijke communicatie van begin tot eind.",
     "highlights": [
       "Gratis advies vooraf bij grotere werkzaamheden",
       "Heldere documentatie bij elke installatie",
-      "Ervaren specialisten voor woningen en bedrijfslocaties"
+      "Specialist in elektrotechniek voor woningen en bedrijfslocaties"
     ]
   },
   "services": [
@@ -96,22 +123,31 @@
     {
       "name": "Ruben de Wit",
       "role": "Eindhoven",
-      "quote": "De storing was snel verholpen en we kregen meteen praktisch advies om herhaling te voorkomen."
+      "quote": "De storing was snel verholpen en Strumpen Elektrotechniek gaf direct praktisch advies om herhaling te voorkomen."
     },
     {
       "name": "Sophie Kramer",
       "role": "Roermond",
-      "quote": "Professionele monteurs die afspraken nakomen en op locatie meedenken over veilige oplossingen."
+      "quote": "Professionele uitvoering, duidelijke afspraken en zorgvuldig advies over veilige oplossingen."
     }
   ],
   "team": [
-    { "name": "Daan Smit", "role": "Elektricien" },
-    { "name": "Anika Vos", "role": "Projectcoördinator" },
-    { "name": "Jeroen Peeters", "role": "Onderhoudsspecialist" }
+    {
+      "name": "Strumpen Elektrotechniek",
+      "role": "Elektrotechnisch specialist"
+    },
+    {
+      "name": "Planning",
+      "role": "Heldere projectafstemming"
+    },
+    {
+      "name": "Service",
+      "role": "Onderhoud en storingen"
+    }
   ],
   "contact": {
-    "intro": "Laat ons weten waarmee wij u kunnen helpen. Wij reageren met de volgende stappen, beschikbaarheid en een indicatieve planning.",
-    "officeHours": "Ma - za: 08:00 - 18:00",
+    "intro": "Geef aan waarvoor elektrotechnische ondersteuning nodig is. Strumpen Elektrotechniek reageert met vervolgstappen, beschikbaarheid en een indicatieve planning.",
+    "officeHours": "Ma - Za: 08:00 - 18:00",
     "responseTime": "Meestal antwoord binnen 1 werkdag"
   }
 }

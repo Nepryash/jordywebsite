@@ -17,7 +17,7 @@ const socialIcons = [
 const exploreLinks = [
   { label: "Home", href: "/" },
   { label: "Diensten", href: "/services" },
-  { label: "Over ons", href: "/about" },
+  { label: "Over Strumpen", href: "/about" },
   { label: "Contact", href: "/contact" }
 ] as const;
 
@@ -57,7 +57,7 @@ const ui = computed(() => getUiCopy());
 
           <div class="footer-newsletter">
             <strong class="footer-heading footer-social-heading">{{ ui.footer.socials }}</strong>
-            <p class="footer-social-copy">Volg updates en recente werkzaamheden via onze sociale kanalen.</p>
+            <p class="footer-social-copy">Volg updates en recente werkzaamheden via de sociale kanalen.</p>
             <div class="footer-socials">
               <a
                 v-for="social in socialIcons"
@@ -72,7 +72,7 @@ const ui = computed(() => getUiCopy());
           </div>
         </div>
         <div class="footer-bottom">
-          <p class="footer-copyright">{{ content.brand.name }} &copy; 2026</p>
+          <p class="footer-copyright">Strumpen &copy; 2026</p>
         </div>
       </div>
     </div>

@@ -10,20 +10,18 @@
   --card-gap: clamp(1rem, 1.6vw, 1.55rem);
   --block-pad: clamp(1.25rem, 2.6vw, 2.35rem);
   --hero-pad: clamp(3.5rem, 8vw, 6rem);
-  --hero-scene-offset: clamp(1rem, 5vw, 4rem);
-  --hero-scene-width: min(31vw, 420px);
-  --blue: #1d36a7;
-  --blue-dark: #091533;
-  --yellow: #ffd74a;
-  --text: #111827;
-  --muted: #5b6578;
-  --surface: #f4f0e8;
-  --surface-soft: #fbf8f2;
-  --surface-strong: #eef2fa;
-  --line: rgba(9, 21, 51, 0.12);
-  --line-strong: rgba(255, 215, 74, 0.28);
-  --shadow-soft: 0 22px 50px rgba(9, 21, 51, 0.12);
-  --shadow-strong: 0 30px 70px rgba(9, 21, 51, 0.2);
+  --blue: #ffd100;
+  --blue-dark: #0d0d0d;
+  --yellow: #ffd100;
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.72);
+  --surface: #0d0d0d;
+  --surface-soft: #1a1a1a;
+  --surface-strong: #141414;
+  --line: rgba(255, 255, 255, 0.1);
+  --line-strong: rgba(255, 209, 0, 0.34);
+  --shadow-soft: 0 22px 50px rgba(0, 0, 0, 0.34);
+  --shadow-strong: 0 30px 70px rgba(0, 0, 0, 0.42);
   --scroll-progress: 0;
 }
 
@@ -36,8 +34,6 @@
     --grid-gap: clamp(1.1rem, 1.6vw, 1.9rem);
     --card-gap: clamp(1rem, 1.35vw, 1.45rem);
     --hero-pad: clamp(3.75rem, 7vw, 6rem);
-    --hero-scene-offset: clamp(1.5rem, 4vw, 4.5rem);
-    --hero-scene-width: min(29vw, 418px);
   }
 }
 
@@ -51,8 +47,6 @@
     --card-gap: clamp(0.9rem, 1.8vw, 1.15rem);
     --block-pad: clamp(1.2rem, 2.8vw, 1.7rem);
     --hero-pad: clamp(3rem, 8vw, 4.5rem);
-    --hero-scene-offset: clamp(1rem, 3vw, 2rem);
-    --hero-scene-width: min(33vw, 340px);
   }
 }
 
@@ -66,8 +60,6 @@
     --card-gap: clamp(0.95rem, 1.5vw, 1.25rem);
     --block-pad: clamp(1.25rem, 2.5vw, 1.95rem);
     --hero-pad: clamp(3.25rem, 7vw, 5rem);
-    --hero-scene-offset: clamp(1rem, 3vw, 2.75rem);
-    --hero-scene-width: min(31vw, 380px);
   }
 }
 
@@ -79,8 +71,6 @@
     --section-space-tight: clamp(2rem, 2.1vw, 3.15rem);
     --grid-gap: clamp(1.2rem, 1.45vw, 2rem);
     --card-gap: clamp(1rem, 1.2vw, 1.5rem);
-    --hero-scene-offset: clamp(2rem, 3.5vw, 4.75rem);
-    --hero-scene-width: min(27vw, 410px);
   }
 }
 
@@ -92,8 +82,6 @@
     --section-space-tight: clamp(2.1rem, 1.8vw, 3.25rem);
     --grid-gap: clamp(1.25rem, 1.15vw, 2rem);
     --card-gap: clamp(1rem, 1vw, 1.45rem);
-    --hero-scene-offset: clamp(2rem, 3vw, 5rem);
-    --hero-scene-width: min(24vw, 390px);
   }
 }
 
@@ -115,8 +103,9 @@ body {
   font-family: "Roboto", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(255, 215, 74, 0.14), transparent 28%),
-    linear-gradient(180deg, #f7f3eb 0%, #f2eee5 100%);
+    radial-gradient(circle at top left, rgba(255, 209, 0, 0.14), transparent 26%),
+    radial-gradient(circle at bottom right, rgba(255, 209, 0, 0.08), transparent 24%),
+    linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 100%);
   overflow-x: hidden;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
@@ -167,7 +156,7 @@ button {
 }
 
 :focus-visible {
-  outline: 3px solid rgba(29, 54, 167, 0.26);
+  outline: 3px solid rgba(255, 209, 0, 0.4);
   outline-offset: 3px;
 }
 
@@ -206,10 +195,10 @@ main {
   position: relative;
   top: auto;
   z-index: 30;
-  background: rgba(247, 243, 235, 0.9);
+  background: rgba(13, 13, 13, 0.92);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(9, 21, 51, 0.08);
+  border-bottom: 1px solid rgba(255, 209, 0, 0.12);
 }
 
 @media (min-width: 981px) {
@@ -253,7 +242,7 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
-  color: var(--blue);
+  color: var(--yellow);
   font-weight: 700;
   min-width: 0;
 }
@@ -270,19 +259,20 @@ main {
   max-width: 100px;
   object-fit: contain;
   flex: 0 0 auto;
+  filter: brightness(0) saturate(100%) invert(82%) sepia(94%) saturate(1549%) hue-rotate(358deg) brightness(103%) contrast(104%);
 }
 
 .header-brand-name {
   font-size: clamp(1.8rem, 2.16vw, 2.2rem);
   font-weight: 600;
   line-height: 1;
-  color: var(--blue);
+  color: #ffffff;
   min-width: 0;
   overflow-wrap: anywhere;
 }
 
 .header-brand-subtitle {
-  color: var(--blue);
+  color: rgba(255, 209, 0, 0.86);
   font-family: "Montserrat", sans-serif;
   font-size: 0.48rem;
   font-weight: 700;
@@ -334,25 +324,25 @@ main {
 }
 
 .header-contact-location {
-  color: var(--text);
+  color: rgba(255, 255, 255, 0.84);
   overflow-wrap: anywhere;
 }
 
 .request-button {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #1736ab, #0b1a45);
-  color: white;
+  background: linear-gradient(135deg, #ffd100, #f0b400);
+  color: #0d0d0d;
   min-height: 47px;
   padding: 0.65rem 1.55rem;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 209, 0, 0.32);
   font-size: 0.92rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
-  box-shadow: 0 12px 28px rgba(9, 21, 51, 0.16);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
 }
 
 .whatsapp-button {
@@ -362,7 +352,7 @@ main {
   min-height: 47px;
   padding: 0.65rem 1.15rem;
   border-radius: 999px;
-  border: 1px solid rgba(37, 211, 102, 0.18);
+  border: 1px solid rgba(37, 211, 102, 0.24);
   background: linear-gradient(135deg, #25d366, #128c4a);
   color: white;
   font-size: 0.9rem;
@@ -375,7 +365,7 @@ main {
 .whatsapp-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 14px 28px rgba(18, 140, 74, 0.26);
-  filter: brightness(1.03);
+  filter: brightness(1.08);
 }
 
 .whatsapp-button-icon {
@@ -395,7 +385,7 @@ main {
 
 .request-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0, 20, 71, 0.18);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.24);
 }
 
 .request-button:hover::after {
@@ -403,9 +393,9 @@ main {
 }
 
 .menu-bar {
-  background: linear-gradient(180deg, rgba(9, 21, 51, 0.98), rgba(6, 13, 31, 0.98));
+  background: linear-gradient(180deg, rgba(26, 26, 26, 0.98), rgba(13, 13, 13, 0.98));
   color: white;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 209, 0, 0.12);
 }
 
 .menu-inner {
@@ -495,8 +485,8 @@ main {
   inset: 0;
   z-index: 0;
   background:
-    linear-gradient(105deg, rgba(7, 14, 31, 0.9) 12%, rgba(7, 14, 31, 0.74) 44%, rgba(7, 14, 31, 0.24) 70%, rgba(7, 14, 31, 0.08) 100%),
-    radial-gradient(circle at 18% 30%, rgba(255, 215, 74, 0.2), transparent 26%);
+    linear-gradient(105deg, rgba(13, 13, 13, 0.92) 12%, rgba(13, 13, 13, 0.78) 44%, rgba(13, 13, 13, 0.36) 70%, rgba(13, 13, 13, 0.12) 100%),
+    radial-gradient(circle at 18% 30%, rgba(255, 209, 0, 0.18), transparent 26%);
 }
 
 .figma-hero::after {
@@ -505,7 +495,7 @@ main {
   inset: auto 0 0;
   z-index: 0;
   height: 40%;
-  background: linear-gradient(180deg, rgba(7, 14, 31, 0), rgba(7, 14, 31, 0.72));
+  background: linear-gradient(180deg, rgba(13, 13, 13, 0), rgba(13, 13, 13, 0.82));
   transform: translate3d(0, calc(var(--scroll-progress) * 26px), 0);
 }
 
@@ -547,7 +537,7 @@ main {
   max-width: 11ch;
   font-size: clamp(3rem, 5.25vw, 5.025rem);
   line-height: 0.92;
-  color: #fff8de;
+  color: #ffffff;
   text-shadow: 0 10px 40px rgba(0, 0, 0, 0.32);
 }
 
@@ -572,10 +562,10 @@ main {
   gap: 0.55rem;
   min-height: 40px;
   padding: 0.55rem 0.9rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 209, 0, 0.18);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  background: rgba(26, 26, 26, 0.64);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
   color: white;
   font-size: 0.9rem;
   font-weight: 500;
@@ -589,165 +579,6 @@ main {
   border-radius: 999px;
   background: var(--yellow);
   box-shadow: 0 0 14px rgba(255, 215, 74, 0.58);
-}
-
-.hero-installation-scene {
-  position: absolute;
-  top: 21%;
-  right: var(--hero-scene-offset);
-  z-index: 1;
-  width: var(--hero-scene-width);
-  aspect-ratio: 1.12 / 0.78;
-  perspective: 1000px;
-  transform:
-    translate3d(0, calc(var(--scroll-progress) * -24px), 0)
-    rotateX(calc(-2deg + (var(--scroll-progress) * -3deg)))
-    rotateY(calc(-14deg + (var(--scroll-progress) * -8deg)));
-  transform-style: preserve-3d;
-  transition: opacity 240ms ease;
-}
-
-.installation-panel,
-.installation-panel-label,
-.installation-path,
-.installation-lamp,
-.installation-lamp-glow,
-.installation-lamp-bulb,
-.installation-lamp-base,
-.installation-current {
-  position: absolute;
-  display: block;
-  transform-style: preserve-3d;
-}
-
-.installation-panel {
-  inset: 0;
-  border: 1px solid rgba(255, 226, 72, 0.42);
-  border-radius: 8px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04) 34%, rgba(0, 41, 146, 0.5)),
-    rgba(0, 20, 71, 0.54);
-  box-shadow:
-    0 24px 58px rgba(0, 20, 71, 0.34),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    inset 0 -18px 34px rgba(0, 10, 36, 0.28);
-  overflow: hidden;
-  transform: translateZ(72px) rotateY(-8deg);
-}
-
-.installation-panel::before {
-  content: "";
-  position: absolute;
-  inset: 13% 8% 15%;
-  border: 1px solid rgba(255, 226, 72, 0.22);
-  border-radius: 4px;
-}
-
-.installation-panel-label {
-  left: 10%;
-  top: 9%;
-  width: 36%;
-  height: 3px;
-  border-radius: 999px;
-  background: rgba(255, 226, 72, 0.64);
-  box-shadow: 0 0 14px rgba(255, 226, 72, 0.32);
-}
-
-.installation-lamp {
-  left: 50%;
-  top: 50%;
-  width: 34%;
-  aspect-ratio: 1 / 1.16;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4%;
-  transform: translate3d(-50%, -50%, 44px);
-  animation: lamp-float 5.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-}
-
-.installation-lamp-glow {
-  inset: -18%;
-  border-radius: 999px;
-  background: radial-gradient(circle, rgba(255, 226, 72, 0.46), rgba(255, 226, 72, 0.18) 34%, transparent 67%);
-  filter: blur(3px);
-  animation: lamp-glow 3.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-}
-
-.installation-lamp-bulb {
-  position: relative;
-  width: 43.4%;
-  height: 40.6%;
-  border-radius: 999px 999px 70% 70%;
-  border: 1px solid rgba(255, 246, 164, 0.76);
-  background:
-    radial-gradient(circle at 42% 28%, rgba(255, 255, 226, 0.96), rgba(255, 226, 72, 0.92) 34%, rgba(238, 173, 23, 0.68) 72%),
-    var(--yellow);
-  box-shadow:
-    0 0 20px rgba(255, 226, 72, 0.82),
-    0 0 54px rgba(255, 226, 72, 0.42),
-    inset 0 2px 0 rgba(255, 255, 224, 0.84);
-}
-
-.installation-lamp-bulb::after {
-  content: "";
-  position: absolute;
-  left: 35%;
-  top: 22%;
-  width: 14%;
-  height: 18%;
-  border-radius: 999px;
-  background: rgba(255, 255, 238, 0.72);
-}
-
-.installation-lamp-base {
-  position: relative;
-  width: 30%;
-  height: 18%;
-  border-radius: 4px 4px 7px 7px;
-  background:
-    repeating-linear-gradient(180deg, rgba(0, 41, 146, 0.42) 0 3px, rgba(255, 255, 255, 0.56) 4px 7px),
-    linear-gradient(90deg, rgba(166, 178, 202, 0.92), rgba(241, 244, 250, 0.96), rgba(139, 154, 190, 0.88));
-  box-shadow: 0 9px 18px rgba(0, 10, 36, 0.26);
-}
-
-.installation-path {
-  left: 10%;
-  right: 10%;
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, rgba(255, 226, 72, 0), rgba(255, 226, 72, 0.72), rgba(255, 226, 72, 0));
-  box-shadow: 0 0 14px rgba(255, 226, 72, 0.2);
-}
-
-.installation-path-top {
-  top: 25%;
-}
-
-.installation-path-bottom {
-  bottom: 19%;
-  opacity: 0.5;
-}
-
-.installation-current {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: var(--yellow);
-  box-shadow: 0 0 16px rgba(255, 226, 72, 0.82), 0 0 32px rgba(255, 226, 72, 0.34);
-  animation: current-travel 4.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-}
-
-.installation-current-a {
-  left: 12%;
-  top: 23.5%;
-}
-
-.installation-current-b {
-  left: 24%;
-  bottom: 17.5%;
-  animation-delay: -2.1s;
 }
 
 .figma-hero-copy h1 {
@@ -773,9 +604,9 @@ main {
   overflow: hidden;
   isolation: isolate;
   margin-top: 0.2rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 209, 0, 0.2);
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--yellow), #ffcb2f);
+  background: linear-gradient(135deg, var(--yellow), #f0b400);
   color: var(--blue-dark);
   padding: 0.92rem 1.35rem;
   font-size: 0.9rem;
@@ -788,14 +619,14 @@ main {
     color 220ms ease,
     background-color 220ms ease,
     border-color 220ms ease;
-  box-shadow: 0 16px 34px rgba(255, 215, 74, 0.18);
+  box-shadow: 0 16px 34px rgba(255, 209, 0, 0.18);
   animation: cta-button-enter 650ms ease-out both;
 }
 
 .home-about {
   position: relative;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
     var(--surface);
   padding: var(--section-space) 0 clamp(2.75rem, 4vw, 4.2rem);
 }
@@ -815,10 +646,10 @@ main {
   max-width: 100%;
   min-height: 100%;
   padding: var(--block-pad);
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 209, 0, 0.12);
   border-radius: 40px;
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 26px 55px rgba(9, 21, 51, 0.12);
+  background: rgba(26, 26, 26, 0.88);
+  box-shadow: 0 26px 55px rgba(0, 0, 0, 0.26);
   backdrop-filter: blur(12px);
 }
 
@@ -836,7 +667,7 @@ main {
 .feature p,
 .team-row p {
   margin: 0 0 1rem;
-  color: var(--text);
+  color: rgba(255, 255, 255, 0.84);
   font-size: 1.05rem;
   line-height: 1.5;
 }
@@ -861,7 +692,7 @@ main {
   min-width: 0;
   padding: 1rem 1rem 0.95rem;
   border-radius: 22px;
-  background: #171717;
+  background: #0d0d0d;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
@@ -889,8 +720,8 @@ main {
   overflow: hidden;
   isolation: isolate;
   margin-top: 0.5rem;
-  background: var(--blue);
-  color: #f5f5f5;
+  background: linear-gradient(135deg, #ffd100, #f0b400);
+  color: #0d0d0d;
   padding: 0.8rem 1.65rem;
   border-radius: 999px;
   font-size: 1.05rem;
@@ -931,17 +762,17 @@ main {
 
 .hero-contact-link:hover,
 .hero-contact-link:focus-visible {
-  background: #ffe693;
-  border-color: rgba(255, 255, 255, 0.26);
+  background: #fff0a6;
+  border-color: rgba(255, 209, 0, 0.34);
   color: var(--blue-dark);
-  box-shadow: 0 18px 34px rgba(255, 215, 74, 0.28);
+  box-shadow: 0 18px 34px rgba(255, 209, 0, 0.28);
 }
 
 .about-button:hover,
 .about-button:focus-visible {
-  background: #0d3fc9;
-  color: white;
-  box-shadow: 0 18px 34px rgba(0, 20, 71, 0.24);
+  background: #fff0a6;
+  color: #0d0d0d;
+  box-shadow: 0 18px 34px rgba(255, 209, 0, 0.24);
 }
 
 .hero-contact-link:focus-visible,
@@ -1091,7 +922,7 @@ main {
 }
 
 .home-services {
-  background: linear-gradient(180deg, var(--blue-dark), #101f4b);
+  background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
   padding: clamp(3rem, 5vw, 4.25rem) 0 var(--section-space);
 }
 
@@ -1134,12 +965,12 @@ main {
 .figma-service-card-flip {
   position: relative;
   min-height: 276px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 209, 0, 0.14);
   border-radius: 24px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.04);
+  background: #1a1a1a;
   perspective: 1200px;
-  box-shadow: 0 20px 40px rgba(4, 10, 28, 0.22);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   transform: translateY(24px);
   opacity: 0;
   animation: service-card-enter 700ms ease-out forwards;
@@ -1157,7 +988,7 @@ main {
 .figma-service-card-flip:hover {
   transform: translateY(-8px) scale(1.01);
   transition: transform 280ms ease, box-shadow 280ms ease;
-  box-shadow: 0 28px 52px rgba(4, 10, 28, 0.28);
+  box-shadow: 0 28px 52px rgba(0, 0, 0, 0.36);
 }
 
 .figma-service-card-flip:hover .figma-service-card-inner {
@@ -1174,7 +1005,7 @@ main {
 }
 
 .figma-service-face-front {
-  background: #fff;
+  background: #1a1a1a;
 }
 
 .figma-service-image-front {
@@ -1196,7 +1027,7 @@ main {
   column-gap: 0.8rem;
   padding: 0.75rem 1.1rem;
   padding: 0.9rem 1.2rem;
-  background: linear-gradient(180deg, rgba(9, 21, 51, 0.18), rgba(9, 21, 51, 0.9));
+  background: linear-gradient(180deg, rgba(13, 13, 13, 0.18), rgba(13, 13, 13, 0.92));
   backdrop-filter: blur(10px);
 }
 
@@ -1220,11 +1051,12 @@ main {
   object-fit: contain;
   justify-self: center;
   align-self: center;
+  filter: brightness(0) saturate(100%) invert(80%) sepia(89%) saturate(1899%) hue-rotate(359deg) brightness(103%) contrast(105%);
 }
 
 .figma-service-face-back {
   transform: rotateY(180deg);
-  background: #0f1d47;
+  background: #1a1a1a;
 }
 
 .figma-service-image-back {
@@ -1239,7 +1071,7 @@ main {
   position: absolute;
   inset: 0;
   border-radius: 24px;
-  background: linear-gradient(180deg, rgba(9, 21, 51, 0.72), rgba(12, 31, 82, 0.94));
+  background: linear-gradient(180deg, rgba(13, 13, 13, 0.76), rgba(26, 26, 26, 0.96));
 }
 
 .figma-service-content {
@@ -1306,7 +1138,7 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  color: var(--blue);
+  color: rgba(255, 209, 0, 0.92);
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -1318,12 +1150,12 @@ main {
   content: "";
   width: 2rem;
   height: 1px;
-  background: rgba(29, 54, 167, 0.24);
+  background: rgba(255, 209, 0, 0.32);
 }
 
 .figma-section-title h2 {
   margin: 0;
-  color: var(--blue-dark);
+  color: #ffffff;
   font-size: clamp(2.5rem, 4vw, 3.4rem);
   font-weight: 400;
   line-height: normal;
@@ -1332,7 +1164,7 @@ main {
 .figma-section-title p {
   margin: 0;
   max-width: 48rem;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.74);
   font-size: 1.05rem;
   line-height: 1.75;
 }
@@ -1361,9 +1193,9 @@ main {
   align-content: start;
   text-align: center;
   padding: 2rem 1.5rem 1.8rem;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 209, 0, 0.1);
   border-radius: 24px;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(26, 26, 26, 0.86);
   box-shadow: var(--shadow-soft);
 }
 
@@ -1372,6 +1204,7 @@ main {
   height: 118px;
   object-fit: contain;
   margin-bottom: 1.2rem;
+  filter: brightness(0) saturate(100%) invert(80%) sepia(89%) saturate(1899%) hue-rotate(359deg) brightness(103%) contrast(105%);
 }
 
 .offer-card-grid .offer-card:nth-child(2) .offer-card-icon {
@@ -1382,7 +1215,7 @@ main {
 .offer-card h3,
 .figma-testimonial-person h3 {
   margin: 0;
-  color: var(--blue-dark);
+  color: #ffffff;
   font-size: clamp(1.6rem, 2vw, 1.95rem);
   font-weight: 400;
   line-height: normal;
@@ -1391,7 +1224,7 @@ main {
 .offer-card p,
 .figma-testimonial-quote,
 .figma-testimonial-person span {
-  color: #272727;
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .offer-card p {
@@ -1402,13 +1235,13 @@ main {
 }
 
 .home-projects {
-  background: linear-gradient(180deg, #0a1533, #101f4b);
+  background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
   padding: 2.4rem 0 clamp(3.4rem, 6vw, 4.6rem);
 }
 
 .home-projects .figma-section-eyebrow,
 .home-projects .figma-section-title h2 {
-  color: #fff7dd;
+  color: #ffffff;
 }
 
 .home-projects .figma-section-eyebrow::before,
@@ -1441,7 +1274,7 @@ main {
 }
 
 .home-testimonials {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(29, 54, 167, 0.05));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 209, 0, 0.04));
   padding: 1.5rem 0 clamp(3rem, 7vw, 6rem);
 }
 
@@ -1450,7 +1283,7 @@ main {
   border: 1px solid var(--line);
   border-radius: 24px;
   padding: 1.65rem 1.65rem 1.2rem;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(26, 26, 26, 0.86);
   box-shadow: var(--shadow-soft);
 }
 
@@ -1487,7 +1320,7 @@ main {
 }
 
 .page-hero-box {
-  background: linear-gradient(135deg, rgba(9, 21, 51, 0.92), rgba(29, 54, 167, 0.76));
+  background: linear-gradient(135deg, rgba(13, 13, 13, 0.94), rgba(26, 26, 26, 0.88));
   color: white;
   padding: clamp(2rem, 3vw, 2.55rem);
   border-radius: 28px;
@@ -1528,13 +1361,13 @@ main {
 }
 
 .breadcrumbs {
-  color: #5d5d5d;
+  color: rgba(255, 255, 255, 0.56);
   font-size: 1rem;
   margin-bottom: 1.5rem;
 }
 
 .breadcrumbs span {
-  color: var(--text);
+  color: rgba(255, 209, 0, 0.92);
   font-weight: 500;
 }
 
@@ -1585,7 +1418,7 @@ main {
 
 .about-figma-copy h2 {
   margin: 0 0 1.9rem;
-  color: var(--blue-dark);
+  color: #ffffff;
   font-size: clamp(2.3rem, 4vw, 3.2rem);
   font-weight: 400;
   line-height: 0.98;
@@ -1619,9 +1452,9 @@ main {
   align-content: start;
   text-align: center;
   padding: 2rem 1.5rem;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 209, 0, 0.1);
   border-radius: 24px;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(26, 26, 26, 0.86);
   box-shadow: var(--shadow-soft);
 }
 
@@ -1630,11 +1463,12 @@ main {
   height: 100px;
   object-fit: contain;
   margin-bottom: 1.45rem;
+  filter: brightness(0) saturate(100%) invert(80%) sepia(89%) saturate(1899%) hue-rotate(359deg) brightness(103%) contrast(105%);
 }
 
 .about-figma-offer-card h3 {
   margin: 0 0 0.95rem;
-  color: var(--blue-dark);
+  color: #ffffff;
   font-size: clamp(1.6rem, 2vw, 1.9rem);
   font-weight: 400;
   line-height: 1.1;
@@ -1661,7 +1495,7 @@ main {
 
 .about-figma-team-head h2 {
   margin: 0 0 0.7rem;
-  color: var(--blue-dark);
+  color: #ffffff;
   font-size: clamp(2.4rem, 4vw, 3.2rem);
   font-weight: 400;
   line-height: 1.1;
@@ -1684,9 +1518,9 @@ main {
 .about-figma-team-card {
   width: 260px;
   padding: 1rem;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 209, 0, 0.1);
   border-radius: 24px;
-  background: rgba(255, 255, 255, 0.86);
+  background: rgba(26, 26, 26, 0.88);
   box-shadow: var(--shadow-soft);
 }
 
@@ -1716,8 +1550,8 @@ main {
   padding: 0.2rem 1rem;
   transform: translateX(-50%);
   border-radius: 5px;
-  background: #002992;
-  color: white;
+  background: #ffd100;
+  color: #0d0d0d;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1;
@@ -1725,7 +1559,7 @@ main {
 
 .about-figma-team-card h3 {
   margin: 0 0 0.75rem;
-  color: #000;
+  color: #ffffff;
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.2;
@@ -1736,7 +1570,7 @@ main {
   align-items: center;
   gap: 0.55rem;
   margin-bottom: 0.65rem;
-  color: #272727;
+  color: rgba(255, 255, 255, 0.8);
   font-size: 1rem;
   line-height: 1.2;
 }
@@ -1927,14 +1761,16 @@ main {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(0, 36, 130, 0.88), rgba(0, 36, 130, 0.88));
+  background:
+    linear-gradient(90deg, rgba(13, 13, 13, 0.96), rgba(26, 26, 26, 0.94)),
+    linear-gradient(rgba(13, 13, 13, 0.92), rgba(13, 13, 13, 0.92));
   backdrop-filter: blur(5px);
 }
 
 .all-services-box {
   position: relative;
   z-index: 1;
-  color: white;
+  color: #ffffff;
   background: transparent;
   padding: clamp(1.5rem, 4vw, 2.2rem) clamp(1rem, 3vw, 2rem) clamp(2rem, 5vw, 2.8rem);
 }
@@ -1947,11 +1783,21 @@ main {
 
 .all-services-header h2 {
   margin: 0;
-  color: white;
+  color: #ffffff;
   font-size: clamp(2.2rem, 4vw, 2.5rem);
   font-weight: 600;
   line-height: normal;
   text-align: center;
+}
+
+.all-services-header h2::after {
+  content: "";
+  display: block;
+  width: 4.5rem;
+  height: 3px;
+  margin: 0.85rem auto 0;
+  border-radius: 999px;
+  background: #ffd100;
 }
 
 .all-services-grid {
@@ -1969,7 +1815,7 @@ main {
 
 .service-column h3 {
   margin: 0 0 1rem;
-  color: white;
+  color: #ffd100;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: normal;
@@ -1987,7 +1833,7 @@ main {
 }
 
 .service-columns-plain li {
-  color: white;
+  color: #ffffff;
   font-size: 1.25rem;
   line-height: 1.6;
 }
@@ -2083,7 +1929,7 @@ main {
 }
 
 .contact-breadcrumb-section .breadcrumbs span {
-  color: var(--blue-dark);
+  color: rgba(255, 209, 0, 0.92);
   font-weight: 600;
 }
 
@@ -2120,9 +1966,9 @@ main {
 .contact-panel-figma,
 .contact-form-figma {
   padding: var(--block-pad);
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 209, 0, 0.1);
   border-radius: 28px;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(26, 26, 26, 0.88);
   box-shadow: var(--shadow-soft);
 }
 
@@ -2135,7 +1981,7 @@ main {
 .contact-form-figma strong {
   display: block;
   margin-bottom: 0.75rem;
-  color: var(--blue-dark);
+  color: #ffffff;
   font-size: 2.3rem;
   font-weight: 400;
 }
@@ -2146,7 +1992,7 @@ main {
 }
 
 .contact-section-label::before {
-  background: rgba(29, 54, 167, 0.36);
+  background: rgba(255, 209, 0, 0.42);
 }
 
 .contact-panel-figma p {
@@ -2169,9 +2015,9 @@ main {
   gap: 0.35rem;
   min-width: 0;
   padding: 0.95rem 1rem;
-  border: 1px solid rgba(9, 21, 51, 0.08);
+  border: 1px solid rgba(255, 209, 0, 0.08);
   border-radius: 18px;
-  background: rgba(244, 240, 232, 0.72);
+  background: rgba(13, 13, 13, 0.88);
 }
 
 .contact-detail-item-email {
@@ -2187,7 +2033,7 @@ main {
 }
 
 .contact-detail-value {
-  color: var(--blue-dark);
+  color: #ffffff;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.5;
@@ -2210,9 +2056,9 @@ main {
   height: 40px;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(9, 21, 51, 0.1);
+  border: 1px solid rgba(255, 209, 0, 0.14);
   border-radius: 999px;
-  background: rgba(244, 240, 232, 0.72);
+  background: rgba(13, 13, 13, 0.88);
 }
 
 .contact-social-link img {
@@ -2233,7 +2079,7 @@ main {
 }
 
 .contact-form-figma label {
-  color: var(--blue-dark);
+  color: rgba(255, 209, 0, 0.9);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -2244,21 +2090,21 @@ main {
 .contact-form-figma input,
 .contact-form-figma textarea {
   width: 100%;
-  border: 1px solid rgba(9, 21, 51, 0.14);
+  border: 1px solid rgba(255, 209, 0, 0.14);
   border-radius: 14px;
-  background: #fffefb;
+  background: rgba(13, 13, 13, 0.96);
   padding: 0.85rem 1rem;
   font-size: 0.95rem;
-  color: #272727;
+  color: #ffffff;
   transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
 }
 
 .contact-form-figma input:focus,
 .contact-form-figma textarea:focus {
   outline: none;
-  border-color: rgba(29, 54, 167, 0.42);
-  box-shadow: 0 0 0 4px rgba(29, 54, 167, 0.12);
-  background: white;
+  border-color: rgba(255, 209, 0, 0.48);
+  box-shadow: 0 0 0 4px rgba(255, 209, 0, 0.12);
+  background: rgba(13, 13, 13, 1);
 }
 
 .contact-form-figma textarea {
@@ -2272,8 +2118,8 @@ main {
   padding: 0.8rem 1.25rem;
   border: none;
   border-radius: 999px;
-  background: linear-gradient(135deg, #1736ab, #0b1a45);
-  color: white;
+  background: linear-gradient(135deg, #ffd100, #f0b400);
+  color: #0d0d0d;
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -2352,9 +2198,9 @@ main {
 
 .footer-shell {
   background:
-    linear-gradient(160deg, rgba(255, 255, 255, 0.95) 0%, rgba(236, 243, 252, 0.98) 46%, rgba(226, 236, 249, 1) 100%);
-  color: var(--blue-dark);
-  border: 1px solid rgba(29, 54, 167, 0.08);
+    linear-gradient(160deg, rgba(26, 26, 26, 0.98) 0%, rgba(13, 13, 13, 0.98) 46%, rgba(20, 20, 20, 1) 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 209, 0, 0.1);
   padding: 1.4rem 1.4rem 1rem;
   border-radius: 28px 28px 0 0;
   box-shadow: 0 18px 40px rgba(9, 21, 51, 0.08);
@@ -2399,7 +2245,7 @@ main {
 .footer-copy,
 .footer-grid a,
 .footer-grid span {
-  color: rgba(9, 21, 51, 0.78);
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
 }
 
@@ -2407,7 +2253,7 @@ main {
   display: inline-flex;
   max-width: 32rem;
   margin-bottom: 0.75rem;
-  color: rgba(29, 54, 167, 0.76);
+  color: rgba(255, 209, 0, 0.88);
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -2428,6 +2274,7 @@ main {
   object-fit: contain;
   flex: 0 0 auto;
   transform: translateY(0);
+  filter: brightness(0) saturate(100%) invert(82%) sepia(94%) saturate(1549%) hue-rotate(358deg) brightness(103%) contrast(104%);
 }
 
 .footer-brand strong {
@@ -2458,7 +2305,7 @@ main {
 .footer-heading {
   display: block;
   margin-bottom: 0.7rem;
-  color: var(--blue-dark);
+  color: #ffffff;
   font-size: 1.22rem;
   font-weight: 400;
 }
@@ -2478,7 +2325,7 @@ main {
 }
 
 .footer-links a:hover {
-  color: var(--blue);
+  color: var(--yellow);
   transform: translateX(2px);
 }
 
@@ -2489,7 +2336,7 @@ main {
 .footer-social-copy {
   max-width: 15rem;
   margin: 0 0 0.9rem;
-  color: rgba(9, 21, 51, 0.62);
+  color: rgba(255, 255, 255, 0.62);
   font-size: 0.88rem;
   line-height: 1.55;
 }
@@ -2506,17 +2353,17 @@ main {
   height: 40px;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(9, 21, 51, 0.1);
+  border: 1px solid rgba(255, 209, 0, 0.14);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.84);
+  background: rgba(26, 26, 26, 0.88);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .footer-social-link:hover {
   transform: translateY(-2px);
-  border-color: rgba(29, 54, 167, 0.18);
-  box-shadow: 0 12px 22px rgba(29, 54, 167, 0.12);
+  border-color: rgba(255, 209, 0, 0.28);
+  box-shadow: 0 12px 22px rgba(255, 209, 0, 0.12);
 }
 
 .footer-social-link img {
@@ -2537,7 +2384,7 @@ main {
 
 .footer-copyright {
   margin: 0;
-  color: rgba(9, 21, 51, 0.48);
+  color: rgba(255, 255, 255, 0.46);
   text-align: center;
   font-size: 0.86rem;
   line-height: 1.4;
@@ -2638,51 +2485,6 @@ main > section.scroll-reveal.is-visible {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes current-travel {
-  0% {
-    opacity: 0;
-    translate: 0 0;
-  }
-
-  12% {
-    opacity: 1;
-  }
-
-  62% {
-    opacity: 1;
-    translate: 90px 0;
-  }
-
-  100% {
-    opacity: 0;
-    translate: 150px 0;
-  }
-}
-
-@keyframes lamp-glow {
-  0%,
-  100% {
-    opacity: 0.62;
-    scale: 0.94;
-  }
-
-  42% {
-    opacity: 1;
-    scale: 1.12;
-  }
-}
-
-@keyframes lamp-float {
-  0%,
-  100% {
-    translate: 0 0;
-  }
-
-  48% {
-    translate: 0 -4px;
   }
 }
 
@@ -2918,12 +2720,6 @@ main > section.scroll-reveal.is-visible {
     text-align: center;
   }
 
-  .hero-installation-scene {
-    opacity: 0.5;
-    right: 1rem;
-    width: min(38vw, 300px);
-  }
-
   .download-block {
     grid-template-columns: 1fr;
     justify-items: start;
@@ -2957,9 +2753,6 @@ main > section.scroll-reveal.is-visible {
   .about-button,
   .figma-service-card-inner,
   .request-button,
-  .hero-installation-scene,
-  .installation-current,
-  .installation-lamp,
   .home-about-vehicle {
     animation: none;
     transition: none;
@@ -2989,8 +2782,6 @@ main > section.scroll-reveal.is-visible {
     --card-gap: clamp(0.7rem, 3.4vw, 0.95rem);
     --block-pad: clamp(1rem, 4vw, 1.2rem);
     --hero-pad: clamp(2.4rem, 9vw, 3rem);
-    --hero-scene-offset: 1rem;
-    --hero-scene-width: min(38vw, 300px);
   }
 
   .site-frame {
@@ -3168,10 +2959,6 @@ main > section.scroll-reveal.is-visible {
   .figma-hero {
     min-height: 470px;
     background-position: 58% center;
-  }
-
-  .hero-installation-scene {
-    display: none;
   }
 
   .figma-hero-inner {

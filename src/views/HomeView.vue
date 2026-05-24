@@ -122,30 +122,16 @@ const offerCards = computed(() => [
             {{ content.hero.primaryCta.label }}
           </RouterLink>
         </div>
-        <div class="hero-installation-scene" aria-hidden="true">
-          <span class="installation-panel">
-            <span class="installation-panel-label"></span>
-            <span class="installation-lamp">
-              <span class="installation-lamp-glow"></span>
-              <span class="installation-lamp-bulb"></span>
-              <span class="installation-lamp-base"></span>
-            </span>
-            <span class="installation-path installation-path-top"></span>
-            <span class="installation-path installation-path-bottom"></span>
-            <span class="installation-current installation-current-a"></span>
-            <span class="installation-current installation-current-b"></span>
-          </span>
-        </div>
       </div>
     </section>
 
     <section class="home-about">
       <div class="site-frame home-about-grid">
         <div class="home-about-copy">
-          <h2>Wij zijn Strumpen</h2>
+          <h2>Strumpen Elektrotechniek</h2>
           <p>
-            Met meer dan 8 jaar ervaring verzorgen wij veilige installaties, snelle
-            storingsoplossingen en duidelijke communicatie van begin tot eind.
+            Met meer dan 8 jaar ervaring staat Strumpen Elektrotechniek voor veilige
+            installaties, snelle storingsoplossingen en duidelijke communicatie.
           </p>
           <div class="home-about-stats" aria-label="Resultaten">
             <article class="home-about-stat">
@@ -172,7 +158,7 @@ const offerCards = computed(() => [
               <span class="home-about-vehicle-frame-label">24/7</span>
             </div>
             <img :src="aboutImage" alt="Strumpen servicebus" class="home-about-vehicle" />
-            <div class="home-about-vehicle-badge home-about-vehicle-badge-bottom">Storingen, aanleg en onderhoud</div>
+            <div class="home-about-vehicle-badge home-about-vehicle-badge-bottom">Storingen, installatie en onderhoud</div>
           </div>
         </div>
       </div>
