@@ -120,9 +120,21 @@ async function handleSubmit() {
           <strong>{{ ui.contact.info }}</strong>
           <p>{{ ui.contact.infoCopy }}</p>
           <div class="contact-detail-list">
-            <div v-for="detail in contactDetails" :key="detail.label" class="contact-detail-item">
+            <div
+              v-for="detail in contactDetails"
+              :key="detail.label"
+              class="contact-detail-item"
+              :class="{ 'contact-detail-item-email': detail.label === 'E-mail' }"
+            >
               <span class="contact-detail-label">{{ detail.label }}</span>
-              <a v-if="detail.href" class="contact-detail-value" :href="detail.href">{{ detail.value }}</a>
+              <a
+                v-if="detail.href"
+                class="contact-detail-value"
+                :class="{ 'contact-detail-value-email': detail.label === 'E-mail' }"
+                :href="detail.href"
+              >
+                {{ detail.value }}
+              </a>
               <span v-else class="contact-detail-value">{{ detail.value }}</span>
             </div>
           </div>

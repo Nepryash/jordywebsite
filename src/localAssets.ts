@@ -15,15 +15,15 @@ export const footerAssets = {
 } as const;
 
 export const homeAssets = {
-  heroImage: "/images/home/hero.png",
+  heroImage: "/images/home/landingpagemain.jpg",
   aboutImage: "/images/home/JordyCar-removebg-preview.png",
   serviceCards: [
     { image: "/images/services/woningbouw.jfif", icon: "/icons/home/service-1.svg" },
-    { image: "/images/services/utiliteitsbouw.png", icon: "/icons/home/service-2.svg" },
+    { image: "/images/services/Utiliteitsbouw.jpg", icon: "/icons/home/service-2.svg" },
     { image: "/images/home/service-3.png", icon: "/icons/home/service-3.svg" },
     { image: "/images/services/laadpal.avif", icon: "/icons/home/service-4.svg" },
     { image: "/images/services/onderhoud.jfif", icon: "/icons/home/service-5.svg" },
-    { image: "/images/services/service-6.png", icon: "/icons/home/service-6.svg" }
+    { image: "/images/services/Renovatie.svg", icon: "/icons/home/service-6.svg" }
   ],
   projectImages: [
     "/images/services/recenteprojecten1.jpeg",

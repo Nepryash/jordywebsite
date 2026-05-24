@@ -2,10 +2,12 @@
 import { computed } from "vue";
 import { RouterLink } from "vue-router";
 import { getUiCopy } from "../i18n";
+import { headerAssets } from "../localAssets";
 import { footerAssets } from "../localAssets";
 import type { SiteContent } from "../types";
 
-const { brandMark, worldMap, socialIcons: footerSocialIcons } = footerAssets;
+const { logo } = headerAssets;
+const { worldMap, socialIcons: footerSocialIcons } = footerAssets;
 
 const socialIcons = [
   { name: "Instagram", icon: footerSocialIcons.instagram, href: "#" },
@@ -34,8 +36,8 @@ const ui = computed(() => getUiCopy());
         <div class="footer-grid">
           <div class="footer-lead">
             <div class="footer-brand">
-              <img class="footer-brand-mark" :src="brandMark" alt="" aria-hidden="true" />
-              <strong>{{ content.brand.name.toUpperCase() }}</strong>
+              <img class="footer-brand-logo" :src="logo" alt="" aria-hidden="true" />
+              <strong>STRUMPEN</strong>
             </div>
             <p class="footer-copy footer-copy-figma">{{ ui.footer.lead }}</p>
             <div class="footer-contact-lines">

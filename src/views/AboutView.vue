@@ -4,7 +4,7 @@ import { getUiCopy } from "../i18n";
 import { aboutAssets } from "../localAssets";
 import type { SiteContent } from "../types";
 
-const { aboutHero, aboutPhoto, featureIcons: offerIcons } = aboutAssets;
+const { aboutHero, featureIcons: offerIcons } = aboutAssets;
 
 defineProps<{
   content: SiteContent;
@@ -45,9 +45,6 @@ const aboutParagraphs = computed(() => {
       <div class="site-frame">
         <div class="breadcrumbs about-figma-breadcrumbs" data-node-id="8:554">{{ ui.common.home }} &gt; <span data-node-id="8:555">{{ ui.about.breadcrumb }}</span></div>
         <div class="about-figma-layout">
-          <div class="about-figma-photo">
-            <img :src="aboutPhoto" alt="Elektromonteur aan het werk" data-node-id="8:558" />
-          </div>
           <div class="about-figma-copy">
             <h2 data-node-id="8:556">{{ ui.about.welcome }}</h2>
             <p v-for="(paragraph, index) in aboutParagraphs" :key="index">{{ paragraph }}</p>

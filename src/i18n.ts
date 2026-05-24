@@ -194,7 +194,7 @@ const uiCopy: UiCopy = {
     socials: "Socials",
     subscribe: "Aanmelden",
     lead:
-      "Strumpen helpt woningen en bedrijven met veilige elektrotechniek, helder advies en service waarop u kunt rekenen."
+      "Strumpen Elektrotechniek helpt woningen en bedrijven met veilige elektrotechniek, helder advies en service waarop u kunt rekenen."
   }
 };
 

@@ -115,7 +115,8 @@ const offerCards = computed(() => [
           <div class="hero-service-pills" aria-label="Werkgebieden">
             <span>{{ localizedServices[0].title }}</span>
             <span>{{ localizedServices[1].title }}</span>
-            <span>{{ localizedServices[2].title }}</span>
+            <span>Storingen</span>
+            <span>Renovatie</span>
           </div>
           <RouterLink class="hero-contact-link" :to="content.hero.primaryCta.href">
             {{ content.hero.primaryCta.label }}
@@ -168,10 +169,9 @@ const offerCards = computed(() => [
             <span class="home-about-vehicle-grid" aria-hidden="true"></span>
             <span class="home-about-vehicle-route" aria-hidden="true"></span>
             <div class="home-about-vehicle-frame" aria-hidden="true">
-              <span class="home-about-vehicle-frame-label">Servicebus</span>
+              <span class="home-about-vehicle-frame-label">24/7</span>
             </div>
             <img :src="aboutImage" alt="Strumpen servicebus" class="home-about-vehicle" />
-            <div class="home-about-vehicle-badge home-about-vehicle-badge-top">Op weg naar montage</div>
             <div class="home-about-vehicle-badge home-about-vehicle-badge-bottom">Storingen, aanleg en onderhoud</div>
           </div>
         </div>
