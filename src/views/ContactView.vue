@@ -23,6 +23,19 @@ const sending = ref(false);
 const statusText = ref("");
 const statusType = ref<"idle" | "success" | "error">("idle");
 const whatsappNumber = "31636394319";
+const businessDetails = [
+  {
+    label: "KVK",
+    value: "91700027",
+    href: undefined
+  },
+  {
+    label: "BTW",
+    value: "NL004909654B82",
+    href: undefined
+  }
+] as const;
+
 const contactDetails = computed(() => [
   {
     label: "Adres",
@@ -37,7 +50,8 @@ const contactDetails = computed(() => [
     label: "Telefoon",
     value: props.content.brand.phone,
     href: `tel:${props.content.brand.phone}`
-  }
+  },
+  ...businessDetails
 ]);
 
 function buildWhatsappHref(payload: ContactPayload) {

@@ -2292,13 +2292,14 @@ main {
 
 .footer-contact-lines {
   display: grid;
-  gap: 0.28rem;
+  gap: 0.38rem;
   font-size: 0.92rem;
   overflow-wrap: anywhere;
 }
 
 .footer-explore,
 .footer-newsletter {
+  line-height: 1.55;
   padding-top: 0.35rem;
 }
 

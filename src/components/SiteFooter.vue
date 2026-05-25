@@ -21,6 +21,11 @@ const exploreLinks = [
   { label: "Contact", href: "/contact" }
 ] as const;
 
+const businessDetails = [
+  "KVK: 91700027",
+  "BTW: NL004909654B82"
+] as const;
+
 defineProps<{
   content: SiteContent;
 }>();
@@ -44,6 +49,7 @@ const ui = computed(() => getUiCopy());
               <span>{{ content.brand.address }}</span>
               <a :href="`mailto:${content.brand.email}`">{{ content.brand.email }}</a>
               <a :href="`tel:${content.brand.phone}`">{{ content.brand.phone }}</a>
+              <span v-for="detail in businessDetails" :key="detail">{{ detail }}</span>
             </div>
           </div>
           <div class="footer-explore">
