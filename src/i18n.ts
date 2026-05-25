@@ -80,13 +80,13 @@ const uiCopy: UiCopy = {
     emailAddress: "E-mailadres"
   },
   header: {
-    callUs: "Telephone",
+    callUs: "Telefoon",
     requestService: "Neem contact op"
   },
   home: {
     readMore: "Lees meer",
-    ourServices: "Diensten van Strumpen Elektrotechniek",
-    weOffer: "Zekerheid in elektrotechniek",
+    ourServices: "Diensten",
+    weOffer: "Zekerheid",
     weOfferIntro:
       "Strumpen Elektrotechniek verzorgt werkzaamheden voor woningen en bedrijfspanden met heldere afspraken en een nette oplevering.",
     recentProjects: "Recente projecten",

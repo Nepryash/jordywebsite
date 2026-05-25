@@ -264,7 +264,7 @@ main {
 
 .header-brand-name {
   font-size: clamp(1.8rem, 2.16vw, 2.2rem);
-  font-weight: 600;
+  font-weight: 800;
   line-height: 1;
   color: #ffffff;
   min-width: 0;
@@ -700,7 +700,7 @@ main {
   color: var(--yellow);
   font-family: "Montserrat", sans-serif;
   font-size: clamp(1.45rem, 1rem + 1vw, 2rem);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1;
 }
 
@@ -950,6 +950,11 @@ main {
 
 .section-heading .section-copy {
   display: none;
+}
+
+.home-services .section-heading {
+  justify-content: center;
+  text-align: center;
 }
 
 .figma-services-grid {
@@ -1958,13 +1963,14 @@ main {
 
 .contact-layout-figma {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
+  align-items: stretch;
   justify-content: center;
   gap: var(--grid-gap);
 }
 
 .contact-panel-figma,
 .contact-form-figma {
+  height: 100%;
   padding: var(--block-pad);
   border: 1px solid rgba(255, 209, 0, 0.1);
   border-radius: 28px;
@@ -2294,12 +2300,12 @@ main {
   display: grid;
   gap: 0.38rem;
   font-size: 0.92rem;
+  line-height: 1.55;
   overflow-wrap: anywhere;
 }
 
 .footer-explore,
 .footer-newsletter {
-  line-height: 1.55;
   padding-top: 0.35rem;
 }
 
@@ -2585,6 +2591,7 @@ main > section.scroll-reveal.is-visible {
   }
 
   .contact-panel-figma {
+    height: auto;
     position: static;
   }
 
