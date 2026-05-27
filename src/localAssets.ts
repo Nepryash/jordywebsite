@@ -28,7 +28,10 @@ export const homeAssets = {
   projectImages: [
     "/images/services/recenteprojecten1.jpeg",
     "/images/services/recenteprojecten2.jfif",
-    "/images/services/Recenteprojecten (2).jfif"
+    "/images/services/Recenteprojecten (2).jfif",
+    "/images/services/RecentProject3.jpeg",
+    "/images/services/RecentProject4.jpeg",
+    "/images/services/RecentProject5.jpeg"
   ],
   offerIcons: [
     "/icons/home/offer-1.svg",

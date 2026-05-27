@@ -61,6 +61,21 @@ const recentProjects = [
     image: homeAssets.projectImages[2],
     alt: "Meters en elektrische verdeelapparatuur",
     nodeId: "4:45"
+  },
+  {
+    image: homeAssets.projectImages[3],
+    alt: "Recent elektrotechnisch project met technische installatie",
+    nodeId: "recent-project-3"
+  },
+  {
+    image: homeAssets.projectImages[4],
+    alt: "Recent elektrotechnisch project op locatie",
+    nodeId: "recent-project-4"
+  },
+  {
+    image: homeAssets.projectImages[5],
+    alt: "Recent afgerond elektrotechnisch project",
+    nodeId: "recent-project-5"
   }
 ] as const;
 
