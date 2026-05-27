@@ -26,7 +26,7 @@ export const homeAssets = {
     { image: "/images/services/Renovatie.svg", icon: "/icons/home/service-6.svg" }
   ],
   projectImages: [
-    "/images/services/recenteprojecten1.jpeg",
+    "/images/services/RecentProject1.jpeg",
     "/images/services/recenteprojecten2.jfif",
     "/images/services/Recenteprojecten (2).jfif",
     "/images/services/RecentProject3.jpeg",
