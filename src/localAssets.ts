@@ -8,15 +8,21 @@ export const headerAssets = {
 export const footerAssets = {
   brandMark: "/icons/footer/brand-mark.svg",
   worldMap: "/icons/footer/world-map.png",
+  zaptecLogo: "/images/home/LogoZaptecGGGG.png",
   socialIcons: {
     facebook: "/icons/footer/facebook.svg",
     instagram: "/icons/footer/instagram.svg"
   }
 } as const;
 
+export const socialLinks = {
+  instagram: "https://www.instagram.com/strumpenelektrotechniek?igsh=MXA2a3lyNmRoa210bg==",
+  facebook: "#"
+} as const;
+
 export const homeAssets = {
   heroImage: "/images/home/landingpagemain.jpg",
-  aboutImage: "/images/home/JordyCar-removebg-preview.png",
+  aboutImage: "/images/home/JordyCarph.png",
   serviceCards: [
     { image: "/images/services/woningbouw.jfif", icon: "/icons/home/service-1.svg" },
     { image: "/images/services/Utiliteitsbouw.jpg", icon: "/icons/home/service-2.svg" },
@@ -62,8 +68,8 @@ export const contactAssets = {
   contactHero: "/images/contact/hero.png",
   contactMap: "/images/contact/map.png",
   socialIcons: [
-    { label: "Instagram", icon: "/icons/footer/instagram.svg" },
-    { label: "Facebook", icon: "/icons/footer/facebook.svg" }
+    { label: "Instagram", icon: "/icons/footer/instagram.svg", href: socialLinks.instagram },
+    { label: "Facebook", icon: "/icons/footer/facebook.svg", href: socialLinks.facebook }
   ]
 } as const;
 

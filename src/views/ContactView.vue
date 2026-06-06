@@ -161,8 +161,10 @@ async function handleSubmit() {
               v-for="social in socialIcons"
               :key="social.label"
               class="contact-social-link"
-              href="#"
+              :href="social.href"
               :aria-label="social.label"
+              :target="social.href.startsWith('http') ? '_blank' : undefined"
+              :rel="social.href.startsWith('http') ? 'noopener noreferrer' : undefined"
             >
               <img :src="social.icon" :alt="social.label" />
             </a>

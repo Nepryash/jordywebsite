@@ -3,14 +3,14 @@ import { computed } from "vue";
 import { RouterLink } from "vue-router";
 import { getUiCopy } from "../i18n";
 import { headerAssets } from "../localAssets";
-import { footerAssets } from "../localAssets";
+import { footerAssets, socialLinks } from "../localAssets";
 import type { SiteContent } from "../types";
 
 const { logo } = headerAssets;
-const { worldMap, socialIcons: footerSocialIcons } = footerAssets;
+const { worldMap, zaptecLogo, socialIcons: footerSocialIcons } = footerAssets;
 
 const socialIcons = [
-  { name: "Instagram", icon: footerSocialIcons.instagram, href: "#" },
+  { name: "Instagram", icon: footerSocialIcons.instagram, href: socialLinks.instagram },
   { name: "Facebook", icon: footerSocialIcons.facebook, href: "#" }
 ] as const;
 
@@ -71,9 +71,15 @@ const ui = computed(() => getUiCopy());
                 class="footer-social-link"
                 :href="social.href"
                 :aria-label="social.name"
+                :target="social.href.startsWith('http') ? '_blank' : undefined"
+                :rel="social.href.startsWith('http') ? 'noopener noreferrer' : undefined"
               >
                 <img :src="social.icon" :alt="social.name" />
               </a>
+            </div>
+            <div class="footer-certification" aria-label="Zaptec certificering">
+              <img class="footer-zaptec-logo" :src="zaptecLogo" alt="Zaptec" />
+              <span>Zaptec gecertificeerd</span>
             </div>
           </div>
         </div>
